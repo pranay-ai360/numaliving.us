@@ -1,0 +1,25 @@
+# dependencies
+/node_modules
+
+# Jekyll output
+/_site/
+/.jekyll-cache/
+/.jekyll-metadata
+
+# test output
+/coverage/
+/playwright-report/
+/test-results/
+# screenshots and text from the Reference Site, for the local comparison only
+/.parity/
+
+# misc
+.DS_Store
+*.pem
+.env*
+npm-debug.log*
+*.tsbuildinfo
+
+# the Reference Site baseline, and local agent state
+/reference-site/
+/.claude/
