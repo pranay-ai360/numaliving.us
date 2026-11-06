@@ -1,0 +1,2 @@
+{%- comment -%} On the home page only. Telephone and address are left out on purpose: Numa's are not confirmed yet. {%- endcomment -%}
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","name":{{ site.title | jsonify }},"url":{{ site.url | jsonify }},"logo":{{ site.url | append: "/icon.png" | jsonify }},"description":{{ site.description | jsonify }}},{"@type":"WebSite","name":{{ site.title | jsonify }},"url":{{ site.url | jsonify }}}]}</script>

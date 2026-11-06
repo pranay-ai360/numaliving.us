@@ -1,0 +1,2 @@
+{%- comment -%} Params: href, label, variant="outline" (solid by default). {%- endcomment -%}
+<a href="{{ include.href | relative_url }}" class="inline-flex items-center justify-center rounded-sm px-6 py-3 text-sm font-medium tracking-wide transition-colors {% if include.variant == 'outline' %}border border-gold text-gold hover:bg-gold hover:text-white{% else %}bg-gold text-white hover:bg-gold-dark{% endif %}">{{ include.label }}</a>

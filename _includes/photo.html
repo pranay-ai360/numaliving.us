@@ -1,0 +1,23 @@
+{%- comment -%}
+  A photo: an AVIF and a WebP at several widths, made by `npm run images:build`, with the original JPEG as the
+  fallback. The browser picks the smallest copy that fits, using `sizes`. `contents` keeps the <picture> out of
+  the layout, so the <img> sizes itself against its real parent, as it would with no <picture> around it.
+  `hidden` keeps each <source> out too, or it would take a cell of its own in a grid. It still works when hidden.
+  Params: src, alt, class, sizes, is_priority (for the first image on screen).
+{%- endcomment -%}
+{%- comment -%} A name of its own: a page looping over a variable called "photo" would hide one called that here. {%- endcomment -%}
+{%- assign photo_copies = site.data.photos.photos[include.src] -%}
+{%- assign photo_formats = "avif,webp" | split: "," -%}
+<picture class="contents">
+  {%- if photo_copies -%}
+  {%- for format in photo_formats %}
+  <source class="hidden" type="image/{{ format }}" sizes="{{ include.sizes }}" srcset="
+    {%- for width in photo_copies.widths -%}
+      {%- assign copy = photo_copies.base | append: "-" | append: width | append: "." | append: format -%}
+      {{- copy | relative_url | uri_escape }} {{ width }}w{% unless forloop.last %}, {% endunless -%}
+    {%- endfor -%}
+  ">
+  {%- endfor -%}
+  {%- endif %}
+  <img src="{{ include.src | relative_url | uri_escape }}" alt="{{ include.alt | escape }}" class="{{ include.class }}" {% if include.is_priority %}loading="eager" fetchpriority="high"{% else %}loading="lazy" decoding="async"{% endif %}>
+</picture>

@@ -1,0 +1,9 @@
+{%- comment -%} Params: project, is_priority. The data attributes are for the filters on the Projects page. {%- endcomment -%}
+<a href="{{ include.project.url | relative_url }}" class="group block" data-sector="{{ include.project.sector | escape }}" data-country="{{ include.project.country | escape }}">
+  <div class="overflow-hidden">
+    {% include project-visual.html project=include.project class="aspect-[4/3] w-full transition-transform duration-500 group-hover:scale-[1.03]" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" is_priority=include.is_priority %}
+  </div>
+  <p class="eyebrow mt-5">{{ include.project.sector }} · {{ include.project.city }}, {{ include.project.country }}</p>
+  <h3 class="mt-2 text-lg font-semibold transition-colors group-hover:text-gold">{{ include.project.title }}</h3>
+  <p class="mt-2 line-clamp-2 text-sm leading-relaxed text-ink-muted">{{ include.project.summary }}</p>
+</a>

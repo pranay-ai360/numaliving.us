@@ -1,0 +1,12 @@
+{%- comment -%} Section title with the large outlined ghost word behind it. Params: title, ghost, eyebrow, align="center". {%- endcomment -%}
+<div class="relative{% if include.align == 'center' %} text-center{% endif %}">
+  {%- if include.ghost %}
+  <span aria-hidden="true" class="ghost-word absolute hidden sm:block -top-6 text-[4.5rem] sm:-top-10 sm:text-[7.5rem] {% if include.align == 'center' %}left-1/2 -translate-x-1/2{% else %}-left-1{% endif %}">{{ include.ghost }}</span>
+  {%- endif %}
+  <div class="relative">
+    {%- if include.eyebrow %}
+    <p class="eyebrow mb-3">{{ include.eyebrow }}</p>
+    {%- endif %}
+    <h2 class="display text-2xl sm:text-3xl">{{ include.title }}</h2>
+  </div>
+</div>

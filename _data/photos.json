@@ -1,0 +1,1008 @@
+{
+  "settings": "6314036dcc1b41f22deb9f7ffbba533aea5525a7646476d5d37922e831d2772e",
+  "photos": {
+    "/assets/craft/edgebanding.jpg": {
+      "base": "/assets/craft/edgebanding",
+      "width": 888,
+      "widths": [
+        480,
+        800
+      ],
+      "sha256": "9617648b8699de17ec9c8dc7c15449aca0a214143ba24d68f741d4e028dedeb6"
+    },
+    "/assets/craft/factory-jointer.jpg": {
+      "base": "/assets/craft/factory-jointer",
+      "width": 1448,
+      "widths": [
+        480,
+        800,
+        1200
+      ],
+      "sha256": "1ccc51cbdf2f6da3b1aca579657111022d3a4f826b617ed8eb88443f9ed49913"
+    },
+    "/assets/craft/lacquer-spray-booth.jpg": {
+      "base": "/assets/craft/lacquer-spray-booth",
+      "width": 1086,
+      "widths": [
+        480,
+        800
+      ],
+      "sha256": "384084ceca392bdf520fb8ba006f869f31271f2caf5f2455bf8dda0dfcc4c1e3"
+    },
+    "/assets/craft/lobby-out-2-1400x788.jpg": {
+      "base": "/assets/craft/lobby-out-2-1400x788",
+      "width": 1400,
+      "widths": [
+        480,
+        800,
+        1200
+      ],
+      "sha256": "3d03a13b8a527e2e294fbfa8b3c9f217825befadd79082c225cb442d28229e23"
+    },
+    "/assets/craft/veneer-laying.jpg": {
+      "base": "/assets/craft/veneer-laying",
+      "width": 1086,
+      "widths": [
+        480,
+        800
+      ],
+      "sha256": "c81e32e687f7916007ed028f8ce1097c6ac4d795f2954a0d4c28f87cc2fa8fb9"
+    },
+    "/assets/projects/Amherst/amherst-01.jpg": {
+      "base": "/assets/projects/Amherst/amherst-01",
+      "width": 1600,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "sha256": "ceac923515a5ea50ed06d52bfae552fb15168d5a2f423e2db63d7a7a526e0f2e"
+    },
+    "/assets/projects/Amherst/amherst-02.jpg": {
+      "base": "/assets/projects/Amherst/amherst-02",
+      "width": 1600,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "sha256": "cf7087ff7c94d683946bc416e0f92a8ba4190b818a05dd82c9f76c4b7d08ab25"
+    },
+    "/assets/projects/Amherst/amherst-03.jpg": {
+      "base": "/assets/projects/Amherst/amherst-03",
+      "width": 1600,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "sha256": "5ce4e26ce44d2a7a226da6a305c323cdb7d63e5ed2a9a8004c384d2434c215a2"
+    },
+    "/assets/projects/Amherst/amherst-04.jpg": {
+      "base": "/assets/projects/Amherst/amherst-04",
+      "width": 1600,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "sha256": "ecc9973bbef967db82a439ef569986d87a97aec976f99f4425309c9cd5dcc935"
+    },
+    "/assets/projects/Amherst/amherst-05.jpg": {
+      "base": "/assets/projects/Amherst/amherst-05",
+      "width": 1600,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "sha256": "27a3406979d5d8bec8a63f6ab5c6c9ca741fbb85b3031d4cf81c15a45e9cac34"
+    },
+    "/assets/projects/Amherst/amherst-06.jpg": {
+      "base": "/assets/projects/Amherst/amherst-06",
+      "width": 1600,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "sha256": "66042b1bfce35d81f4e07746654059361e09b996dd1d6d823121566a50f3c3bc"
+    },
+    "/assets/projects/Amherst/amherst-07.jpg": {
+      "base": "/assets/projects/Amherst/amherst-07",
+      "width": 1600,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "sha256": "0a0b7d4f448bda1849ad1d02ab2ee12dd9711450e3d387b81c4a7026868383c1"
+    },
+    "/assets/projects/Amherst/amherst-10.jpg": {
+      "base": "/assets/projects/Amherst/amherst-10",
+      "width": 1600,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "sha256": "bafe2cdb1b1980246c930aa00822f4dfcfe900cc6acc34877dcbb089adb32a37"
+    },
+    "/assets/projects/Amherst/amherst-11.jpg": {
+      "base": "/assets/projects/Amherst/amherst-11",
+      "width": 1600,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "sha256": "d33b564626d3d05c37c8bfba24d8285346651fa71e360c90dc36eb429bb52f87"
+    },
+    "/assets/projects/Amherst/amherst-12.jpg": {
+      "base": "/assets/projects/Amherst/amherst-12",
+      "width": 1600,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "sha256": "99f52255b9848c1e8c6d4c56439d0d7fc97422d7087e6341dcd183d290aa6bec"
+    },
+    "/assets/projects/Amherst/amherst-13.jpg": {
+      "base": "/assets/projects/Amherst/amherst-13",
+      "width": 1600,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "sha256": "6896ff1c5e50fbb0be746384f1efd1eb0aa651b61a406ccf43976513cda4f52f"
+    },
+    "/assets/projects/Estacada/estacada-01.jpg": {
+      "base": "/assets/projects/Estacada/estacada-01",
+      "width": 1600,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "sha256": "454556c3d87bf297eb7094345650219bffef92bb61e680a2285879057c1a2da8"
+    },
+    "/assets/projects/Estacada/estacada-02.jpg": {
+      "base": "/assets/projects/Estacada/estacada-02",
+      "width": 1600,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "sha256": "dafa0bd7a2cb76429f36b7061416ef98057343f2135b3f4ff0d1961ed35d051c"
+    },
+    "/assets/projects/Estacada/estacada-03.jpg": {
+      "base": "/assets/projects/Estacada/estacada-03",
+      "width": 1600,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "sha256": "b4eee48c118cbb1c218f1b8e1e137759e4adfc8ffdfb171f4ae6ae2e84002adf"
+    },
+    "/assets/projects/Estacada/estacada-05.jpg": {
+      "base": "/assets/projects/Estacada/estacada-05",
+      "width": 1600,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "sha256": "d135a596d02f2927e5ac41715c02d090d4886dabed9bd77cc41a7d548d7c1f91"
+    },
+    "/assets/projects/Estacada/estacada-08.jpg": {
+      "base": "/assets/projects/Estacada/estacada-08",
+      "width": 1600,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "sha256": "31bdc47e7d8bf77cb477615039d84cab4354e782654d1db0b4c2367489fa369b"
+    },
+    "/assets/projects/Estacada/estacada-09.jpg": {
+      "base": "/assets/projects/Estacada/estacada-09",
+      "width": 1600,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "sha256": "a7de029f86e55bc3bcbc2f429663e10e9f80150dcc29c13cc6559e39169cdd09"
+    },
+    "/assets/projects/Estacada/estacada-10.jpg": {
+      "base": "/assets/projects/Estacada/estacada-10",
+      "width": 1600,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "sha256": "83569ff515f6bc742ebc5e2fbdf676a98f27c4157cf24baa5448dca4f661754d"
+    },
+    "/assets/projects/Poppy_11/poppy11-01.jpg": {
+      "base": "/assets/projects/Poppy_11/poppy11-01",
+      "width": 1600,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "sha256": "e28135dc4841265c321af4a88c94317b73ceef86e34015e4dd15af1d2703bb50"
+    },
+    "/assets/projects/Poppy_11/poppy11-03.jpg": {
+      "base": "/assets/projects/Poppy_11/poppy11-03",
+      "width": 1600,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "sha256": "f499b75b069f4ff1b1980e9e1c7ea01dd6d947582c5b24c613208ef6f9fbb3a0"
+    },
+    "/assets/projects/Poppy_11/poppy11-05.jpg": {
+      "base": "/assets/projects/Poppy_11/poppy11-05",
+      "width": 1600,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "sha256": "da43f5cedc97c88c8543fd9f324b6d3cad51af74dc561d3a41353ed5d8be108c"
+    },
+    "/assets/projects/Poppy_11/poppy11-07.jpg": {
+      "base": "/assets/projects/Poppy_11/poppy11-07",
+      "width": 1600,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "sha256": "e73edd3266b85500ae33a2d3e886ec9246332efe4d3ce746f1a6fd1811ced8e9"
+    },
+    "/assets/projects/Poppy_11/poppy11-08.jpg": {
+      "base": "/assets/projects/Poppy_11/poppy11-08",
+      "width": 1600,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "sha256": "5b56d081fdd87cf06ff78e11606be3d2061f8e44a6a807d57bfc25f48f77660c"
+    },
+    "/assets/projects/Poppy_11/poppy11-10.jpg": {
+      "base": "/assets/projects/Poppy_11/poppy11-10",
+      "width": 1600,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "sha256": "6d72180db2d5847fe8258bc1727ec26df141b48101efb4b5d16e2b7e2b86e62d"
+    },
+    "/assets/projects/Poppy_11/poppy11-12.jpg": {
+      "base": "/assets/projects/Poppy_11/poppy11-12",
+      "width": 1600,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "sha256": "3484d7721fd936a0597e7bc5e3c227e5878bf6424ff87732678dce708a4bd213"
+    },
+    "/assets/projects/Poppy_11/poppy11-13.jpg": {
+      "base": "/assets/projects/Poppy_11/poppy11-13",
+      "width": 1600,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "sha256": "04d3ac76baaf153a39f981f943635ea09ea9d1a064de46ede2ed61fc0df3ffd5"
+    },
+    "/assets/projects/Poppy_11/poppy11-15.jpg": {
+      "base": "/assets/projects/Poppy_11/poppy11-15",
+      "width": 1600,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "sha256": "2d014648484a8c0783873d0c9114ccafd60bed2c306e645d543d815831d5e865"
+    },
+    "/assets/projects/Poppy_11/poppy11-17.jpg": {
+      "base": "/assets/projects/Poppy_11/poppy11-17",
+      "width": 1600,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "sha256": "f3075c9ef22401af5f0be6d17dccbd9550764c31e5fac66809db2318b287ab58"
+    },
+    "/assets/projects/Poppy_11/poppy11-19.jpg": {
+      "base": "/assets/projects/Poppy_11/poppy11-19",
+      "width": 1600,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "sha256": "76e6c8405ea469a299a35554fc3141f34710a47f88aef085e0f747e1f8127a90"
+    },
+    "/assets/projects/Poppy_11/poppy11-23.jpg": {
+      "base": "/assets/projects/Poppy_11/poppy11-23",
+      "width": 1600,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "sha256": "c9bca4c225cc7fe45acc710cf1b0769b59c5e7371dafaa85b7b4c536ec8219be"
+    },
+    "/assets/projects/Poppy_16/poppy16-11.jpg": {
+      "base": "/assets/projects/Poppy_16/poppy16-11",
+      "width": 1600,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "sha256": "797aa9b190deeb0ac128a1f1042dc0ad265a45c0547da1f48f01e1ea63b16966"
+    },
+    "/assets/projects/Poppy_16/poppy16-12.jpg": {
+      "base": "/assets/projects/Poppy_16/poppy16-12",
+      "width": 1600,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "sha256": "026724638764677032ccd30df8e1e2411f364cd0842403adecc2431b0c553346"
+    },
+    "/assets/projects/Poppy_16/poppy16-13.jpg": {
+      "base": "/assets/projects/Poppy_16/poppy16-13",
+      "width": 1600,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "sha256": "eaa7f6b5ec76508d6c84699c0c866bfa7cd4e82085b9d0ff639cd4535b773769"
+    },
+    "/assets/projects/Poppy_16/poppy16-15.jpg": {
+      "base": "/assets/projects/Poppy_16/poppy16-15",
+      "width": 1600,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "sha256": "f54f16dce6ce66e0a3a5a821ae423c27f70d259a66aab00569e3cfbe11544ca6"
+    },
+    "/assets/projects/Poppy_16/poppy16-16.jpg": {
+      "base": "/assets/projects/Poppy_16/poppy16-16",
+      "width": 1600,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "sha256": "d3095ba0267884a889949cded2aba0649abc4b6cf4c671a64000a673761236a1"
+    },
+    "/assets/projects/Poppy_16/poppy16-17.jpg": {
+      "base": "/assets/projects/Poppy_16/poppy16-17",
+      "width": 1600,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "sha256": "8aea545fa85dfd48efc095e8f246d51dc58b4da5128568197aaa33431c3ac4a6"
+    },
+    "/assets/projects/Poppy_16/poppy16-18.jpeg": {
+      "base": "/assets/projects/Poppy_16/poppy16-18",
+      "width": 1600,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "sha256": "e44345c3e3c1b301161b787407533afb25c071dde7daf06c025c4924793ccba4"
+    },
+    "/assets/projects/Poppy_16/poppy16-19.jpeg": {
+      "base": "/assets/projects/Poppy_16/poppy16-19",
+      "width": 1600,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "sha256": "56650f1089ac4e996f7ae7b275b72e27e713eae83f0d4508bb3717374bfd080f"
+    },
+    "/assets/projects/Poppy_16/poppy16-20.jpeg": {
+      "base": "/assets/projects/Poppy_16/poppy16-20",
+      "width": 1600,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "sha256": "1c781ff6cac5cface2879abb481f0eac98363260626ae1801d2cbd390612846c"
+    },
+    "/assets/projects/Poppy_16/poppy16-24.jpeg": {
+      "base": "/assets/projects/Poppy_16/poppy16-24",
+      "width": 1600,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "sha256": "b73f7bbff2924d0f5f17566685bef0da8be82a87a6c4c045567aa24b06ff3b42"
+    },
+    "/assets/projects/Poppy_16/poppy16-25.jpeg": {
+      "base": "/assets/projects/Poppy_16/poppy16-25",
+      "width": 1600,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "sha256": "974b5a24933bd369c54cb609b190b919b4afe36d13940477d56ef26d77cf950b"
+    },
+    "/assets/projects/Poppy_16/poppy16-26.jpeg": {
+      "base": "/assets/projects/Poppy_16/poppy16-26",
+      "width": 1600,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "sha256": "44e14d86ac2c2aee96cec1c2f3cf08b5b85c137917c41a2d47e2c8915e0c194b"
+    },
+    "/assets/projects/Poppy_16/poppy16-28.jpeg": {
+      "base": "/assets/projects/Poppy_16/poppy16-28",
+      "width": 1600,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "sha256": "a9addf57e7560f47084701884535a38753c6027fdc7fd60db9a853adde5f82f1"
+    },
+    "/assets/projects/Poppy_16/poppy16-29.jpeg": {
+      "base": "/assets/projects/Poppy_16/poppy16-29",
+      "width": 1600,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "sha256": "c931a61ae8411b7e7cb0850ee8e3646cd0c5282db36aa8982be962430f5090d4"
+    },
+    "/assets/projects/Poppy_16/poppy16-31.jpeg": {
+      "base": "/assets/projects/Poppy_16/poppy16-31",
+      "width": 1600,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "sha256": "9e70e242f36cb2453d9d222e0ce497a2355998a995bf992e9ab714d62ca6692f"
+    },
+    "/assets/projects/Primrose/Living-01-out-1400x788.jpg": {
+      "base": "/assets/projects/Primrose/Living-01-out-1400x788",
+      "width": 1400,
+      "widths": [
+        480,
+        800,
+        1200
+      ],
+      "sha256": "cd6f87aedbfe64798ae2a51b7352ef001e797a1928ccc33a86e9d412957fc7b3"
+    },
+    "/assets/projects/Sandy/sandy-01.jpg": {
+      "base": "/assets/projects/Sandy/sandy-01",
+      "width": 1600,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "sha256": "963c6231548d49e88907a6029b40e424940e363ae7367864ee733905b21d92a8"
+    },
+    "/assets/projects/Sandy/sandy-02.jpg": {
+      "base": "/assets/projects/Sandy/sandy-02",
+      "width": 1600,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "sha256": "a536d053c48eb4c4505c300d3e44c4c7604ca51d110e6a2a8cd9954cf0910d87"
+    },
+    "/assets/projects/Sandy/sandy-03.jpg": {
+      "base": "/assets/projects/Sandy/sandy-03",
+      "width": 1600,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "sha256": "5ae242ba0d560c2f6438f57d15cc2e94832301b51959a2ae6ea14af05ae422f8"
+    },
+    "/assets/projects/Sandy/sandy-06.jpg": {
+      "base": "/assets/projects/Sandy/sandy-06",
+      "width": 1600,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "sha256": "c1c3d7728943329d4f0cb22816557b5b0eff9870f9fbd067b22eb08608e6e87d"
+    },
+    "/assets/projects/Sandy/sandy-07.jpg": {
+      "base": "/assets/projects/Sandy/sandy-07",
+      "width": 1600,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "sha256": "986672c7a51d16d9e9bebd09daed5ec022e5f938ff6724aedaac4fae2e35cb8f"
+    },
+    "/assets/projects/Sandy/sandy-12.jpg": {
+      "base": "/assets/projects/Sandy/sandy-12",
+      "width": 1600,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "sha256": "b2272c3f68013128a908caecd2277abe85572047447de5c09cd684c5e3ec726c"
+    },
+    "/assets/projects/Sandy/sandy-13.jpg": {
+      "base": "/assets/projects/Sandy/sandy-13",
+      "width": 1600,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "sha256": "7e281d21426242da064fd0d91d137d2b91dd9ca65a26dd6662049ec50c6e155f"
+    },
+    "/assets/projects/Sandy/sandy-14.jpg": {
+      "base": "/assets/projects/Sandy/sandy-14",
+      "width": 1600,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "sha256": "eb4f2244d3bd45372a638d1c7468cadada4950d7298f89128af942c1ae7da747"
+    },
+    "/assets/projects/Sandy/sandy-15.jpg": {
+      "base": "/assets/projects/Sandy/sandy-15",
+      "width": 1600,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "sha256": "0722a6ef6552e4a28bfbf7237f2f9838d98d4c132ca1462faaeb50a34e810e3f"
+    },
+    "/assets/projects/Sandy/sandy-16.jpg": {
+      "base": "/assets/projects/Sandy/sandy-16",
+      "width": 1600,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "sha256": "f6da81a9be2a335c56fa6275f852cdf0396655269b52c09b8af7797fb8814696"
+    },
+    "/assets/projects/Sandy/sandy-17.jpg": {
+      "base": "/assets/projects/Sandy/sandy-17",
+      "width": 1600,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "sha256": "f45b5ce52e95b174832bf9a583ec9b435e60b48b0935f8eef29f8d841b431b5f"
+    },
+    "/assets/projects/golf-links/Condor Golf Links18 _ Photo by Intelier1.jpg": {
+      "base": "/assets/projects/golf-links/Condor Golf Links18 _ Photo by Intelier1",
+      "width": 1600,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "sha256": "a78731dc9012a4855551dadb3434ac7055d795773a7e986e8be0d0b61698af0b"
+    },
+    "/assets/projects/golf-links/Condor Golf Links18 _ Photo by Intelier16.jpg": {
+      "base": "/assets/projects/golf-links/Condor Golf Links18 _ Photo by Intelier16",
+      "width": 1600,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "sha256": "90ce8e38afebfea8298a268374d41b67a5ab14e3a2a3b39a60a55437e87a751b"
+    },
+    "/assets/projects/golf-links/Condor Golf Links18 _ Photo by Intelier2.jpg": {
+      "base": "/assets/projects/golf-links/Condor Golf Links18 _ Photo by Intelier2",
+      "width": 1600,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "sha256": "0cb82413a270fd8d88c99367f719fe5cc35d75b6ab10d35c55a891f4e431452b"
+    },
+    "/assets/projects/golf-links/Condor Golf Links18 _ Photo by Intelier24.jpg": {
+      "base": "/assets/projects/golf-links/Condor Golf Links18 _ Photo by Intelier24",
+      "width": 1600,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "sha256": "59c1ff26eceae94203130141f54d541875b332039eff84d6781d5f4d47716788"
+    },
+    "/assets/projects/golf-links/Condor Golf Links18 _ Photo by Intelier25.jpg": {
+      "base": "/assets/projects/golf-links/Condor Golf Links18 _ Photo by Intelier25",
+      "width": 1600,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "sha256": "22b94580338db2d0f63be3c06c68bd86a10a2287ca388e7e0fc0ed72add5c493"
+    },
+    "/assets/projects/golf-links/Condor Golf Links18 _ Photo by Intelier3.jpg": {
+      "base": "/assets/projects/golf-links/Condor Golf Links18 _ Photo by Intelier3",
+      "width": 1600,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "sha256": "3e7c9b0fc0e0f1ea32ef50b81809f886a1a41e3e8fba918aab6363fc6f669c69"
+    },
+    "/assets/projects/golf-links/Condor Golf Links18 _ Photo by Intelier31.jpg": {
+      "base": "/assets/projects/golf-links/Condor Golf Links18 _ Photo by Intelier31",
+      "width": 1600,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "sha256": "46153b0b4cdd3ec12fb475ca70c0d92e4f0fa82d11341df781bf5a2cbdae276b"
+    },
+    "/assets/projects/golf-links/Condor Golf Links18 _ Photo by Intelier32.jpg": {
+      "base": "/assets/projects/golf-links/Condor Golf Links18 _ Photo by Intelier32",
+      "width": 1600,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "sha256": "f56079154f603d019ed8eedf4545df27526ee50642836149e30d9bedff555b68"
+    },
+    "/assets/projects/golf-links/Condor Golf Links18 _ Photo by Intelier33.jpg": {
+      "base": "/assets/projects/golf-links/Condor Golf Links18 _ Photo by Intelier33",
+      "width": 1600,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "sha256": "d306e091d198953469590da930b3bb7c2e594695a3d0275ebb3aeced878a778d"
+    },
+    "/assets/projects/golf-links/Condor Golf Links18 _ Photo by Intelier4.jpg": {
+      "base": "/assets/projects/golf-links/Condor Golf Links18 _ Photo by Intelier4",
+      "width": 1600,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "sha256": "a86c6492440520b1b9ffd3e21cd48ccdfb9624cbfa102dc546a622b2535692bd"
+    },
+    "/assets/projects/golf-links/Condor Golf Links18 _ Photo by Intelier5.jpg": {
+      "base": "/assets/projects/golf-links/Condor Golf Links18 _ Photo by Intelier5",
+      "width": 1600,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "sha256": "e36faca463bbf5d17b6e871116e637a013d9164102d33dca77a56ce1b41e884c"
+    },
+    "/assets/projects/golf-links/Condor Golf Links18 _ Photo by Intelier6.jpg": {
+      "base": "/assets/projects/golf-links/Condor Golf Links18 _ Photo by Intelier6",
+      "width": 1600,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "sha256": "6cf93c86dc34f3a8a983ed523103f22c42c4b1b3eebd9acdd182dec92120218c"
+    },
+    "/assets/projects/golf-links/Condor Golf Links18 _ Photo by Intelier7.jpg": {
+      "base": "/assets/projects/golf-links/Condor Golf Links18 _ Photo by Intelier7",
+      "width": 1600,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "sha256": "1486eca99215b99030825e8d76d1dd13c80baf3b3e4b7a42cd7584d494802ea4"
+    },
+    "/assets/projects/golf-links/Condor Golf Links18 _ Photo by Intelier8.jpg": {
+      "base": "/assets/projects/golf-links/Condor Golf Links18 _ Photo by Intelier8",
+      "width": 1600,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "sha256": "c0414505832573bd3e5661ea6811aa6e52e06941947b936991920099c15577af"
+    },
+    "/assets/projects/marina-villa/Marina-View-0001.jpg": {
+      "base": "/assets/projects/marina-villa/Marina-View-0001",
+      "width": 1600,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "sha256": "e366c0f669224638c4917ffb64a57296fc59059b6cc5ea03a01c1e5096ebfdc5"
+    },
+    "/assets/projects/marina-villa/Marina-View-0036.jpg": {
+      "base": "/assets/projects/marina-villa/Marina-View-0036",
+      "width": 1600,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "sha256": "c97e32c334b1128b51570fd661e06ca27e44631cf816cd822b3cc231303618fb"
+    },
+    "/assets/projects/marina-villa/Marina-View-0039.jpg": {
+      "base": "/assets/projects/marina-villa/Marina-View-0039",
+      "width": 1600,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "sha256": "1b331fd014c47ec56fc6e57f930e8e7d00479457f9994aab757f06fa24352510"
+    },
+    "/assets/projects/marina-villa/Marina-View-0066.jpg": {
+      "base": "/assets/projects/marina-villa/Marina-View-0066",
+      "width": 1600,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "sha256": "c984775be45d0345b9d5bbe0eba2227a901884397ef4d4b01c8388341c8c14d4"
+    },
+    "/assets/projects/marina-villa/Marina-View-0067.jpg": {
+      "base": "/assets/projects/marina-villa/Marina-View-0067",
+      "width": 1600,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "sha256": "1fd86f5cfabf0dc8d039b902255f6697bce3e0b5b1baeeca77aff205aeb8e5b0"
+    },
+    "/assets/projects/marina-villa/Marina-View-0077.jpg": {
+      "base": "/assets/projects/marina-villa/Marina-View-0077",
+      "width": 1600,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "sha256": "f6c10717d87e893368437825b62c020b81fb3190172261a008418016fef99b7f"
+    },
+    "/assets/projects/penthouse25/Penthouse-25-0001.jpg": {
+      "base": "/assets/projects/penthouse25/Penthouse-25-0001",
+      "width": 1600,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "sha256": "a6e44f4e36a2fd5aec43281a7e56be7cc3145632715dc1c6503cdf28cf1cba54"
+    },
+    "/assets/projects/penthouse25/Penthouse-25-0003.jpg": {
+      "base": "/assets/projects/penthouse25/Penthouse-25-0003",
+      "width": 1600,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "sha256": "b9e7b0187d2764052cdda75da4eb546a5e122798006ba8a47c9ba13668a6af62"
+    },
+    "/assets/projects/penthouse25/Penthouse-25-0004.jpg": {
+      "base": "/assets/projects/penthouse25/Penthouse-25-0004",
+      "width": 1600,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "sha256": "b46eda0509642df34c6b95bf6d19e841e5ebe9c7f8ceb5bcbc3cbceb540821bd"
+    },
+    "/assets/projects/penthouse25/Penthouse-25-0005.jpg": {
+      "base": "/assets/projects/penthouse25/Penthouse-25-0005",
+      "width": 1600,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "sha256": "c220892aeafb32f50d66d3c52c461ced9b15eff8e1f51d6d6365c314b18a938f"
+    },
+    "/assets/projects/penthouse25/Penthouse-25-0006.jpg": {
+      "base": "/assets/projects/penthouse25/Penthouse-25-0006",
+      "width": 1600,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "sha256": "de1eed9a7ad23bf9c09b5d1c59d2027435a549de5f73dc250f4b280687cae4a1"
+    },
+    "/assets/projects/penthouse25/Penthouse-25-0011.jpg": {
+      "base": "/assets/projects/penthouse25/Penthouse-25-0011",
+      "width": 1600,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "sha256": "57c0b70b42615cefeb4acf4a771b093c43507edca594e582cfb90c2a61205a6c"
+    },
+    "/assets/projects/penthouse25/Penthouse-25-0014.jpg": {
+      "base": "/assets/projects/penthouse25/Penthouse-25-0014",
+      "width": 1600,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "sha256": "bd9146cd8a06787fdc938ef9a8f925cfc9b8bef62ef2a30b2fb8aca4408f377b"
+    },
+    "/assets/projects/sonate/DSC00614.JPG": {
+      "base": "/assets/projects/sonate/DSC00614",
+      "width": 1600,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "sha256": "494f0f1e0bc7200999807bf47a7220c3ed17c611758dacc330ab40ad2f489b8d"
+    },
+    "/assets/projects/sonate/DSC00734.JPG": {
+      "base": "/assets/projects/sonate/DSC00734",
+      "width": 1600,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "sha256": "b57de2dbf059d8210fe7f5c025055781c2b833228972b3d96652f1d6227e056f"
+    },
+    "/assets/projects/sonate/DSC00773.JPG": {
+      "base": "/assets/projects/sonate/DSC00773",
+      "width": 1600,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "sha256": "bfb610f980979d6e825ce1f9f24cb15b35cae483455718ab794c94a27eae7e5e"
+    }
+  }
+}

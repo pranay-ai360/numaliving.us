@@ -1,0 +1,76 @@
+---
+layout: default
+---
+{%- assign projects = site.projects | sort: "order" | where: "featured", true -%}
+<section class="linen relative overflow-hidden">
+  {% assign hero_mask = "mask-image:radial-gradient(ellipse 38% 55% at 50% 45%, transparent 55%, black 100%);-webkit-mask-image:radial-gradient(ellipse 38% 55% at 50% 45%, transparent 55%, black 100%)" %}
+  {% include line-art.html class="pointer-events-none absolute inset-x-0 bottom-0 h-[85%] w-full text-gold/45" style=hero_mask %}
+  <div class="relative mx-auto flex min-h-[560px] max-w-7xl flex-col items-center justify-center px-4 py-20 text-center sm:min-h-[640px]">
+    {% include wordmark.html size="lg" %}
+    <h1 class="display mt-12 text-3xl sm:text-5xl">{{ site.data.home.hero_title }}</h1>
+    <p class="display mt-6 text-sm text-ink sm:text-lg">{{ site.data.home.hero_sub }}</p>
+    <div class="mt-10 flex flex-wrap justify-center gap-3">
+      {% include button-link.html href="/contact/" label="Request a Quote" %}
+      {% include button-link.html href="/projects/" label="View Projects" variant="outline" %}
+    </div>
+  </div>
+</section>
+
+<section class="py-24">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6">
+    <div class="flex flex-wrap items-end justify-between gap-6">
+      {% include section-title.html ghost="Projects" title="Selected Work" %}
+      <a href="{{ '/projects/' | relative_url }}" class="text-sm font-medium text-gold hover:text-gold-dark">All projects →</a>
+    </div>
+    <div class="mt-12 grid gap-10 md:grid-cols-3">
+      {%- for project in projects limit: 3 %}
+      {% include project-card.html project=project %}
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="linen py-24">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 grid gap-12 lg:grid-cols-[1.1fr_1fr] lg:items-center">
+    <div>
+      {% include section-title.html ghost="About" eyebrow=site.data.site.group title="The Craft Behind Great Interiors" %}
+      <p class="mt-8 text-lg leading-relaxed text-ink-muted">{{ site.data.home.intro }}</p>
+      <div class="mt-8">
+        {% include button-link.html href="/about/" label="Our Story" variant="outline" %}
+      </div>
+    </div>
+    <dl class="grid grid-cols-2 gap-px bg-line">
+      {%- for stat in site.data.home.stats %}
+      <div class="bg-paper p-6 sm:p-8">
+        <dt class="text-sm text-ink-muted">{{ stat.label }}</dt>
+        <dd class="display mt-2 normal-case text-2xl text-gold sm:text-3xl">{{ stat.value }}</dd>
+      </div>
+      {%- endfor %}
+    </dl>
+  </div>
+</section>
+
+<section class="bg-ink py-24 text-white">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 grid gap-12 lg:grid-cols-2 lg:items-center">
+    <div>
+      <p class="eyebrow">How we work</p>
+      <h2 class="display mt-4 text-2xl sm:text-3xl">Every Approval, Online</h2>
+      <p class="mt-6 max-w-lg leading-relaxed text-white/70">Clients, architects and contractors follow their project in the Numa client portal: drawings, shop drawing approvals, RFIs, samples and production status in one place.</p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        {% include button-link.html href="/process/" label="Our Process" %}
+        <a href="{{ '/login/' | relative_url }}" class="inline-flex items-center px-2 py-3 text-sm font-medium text-gold hover:text-white">Client Login →</a>
+      </div>
+    </div>
+    {% include portal-preview.html %}
+  </div>
+</section>
+
+<section class="py-24">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 text-center">
+    {% include section-title.html ghost="Enquire" title="Start a Project" align="center" %}
+    <p class="mx-auto mt-8 max-w-xl text-lg text-ink-muted">Send drawings, a BOQ or a hand sketch. We reply with scope, programme and a priced proposal.</p>
+    <div class="mt-8">
+      {% include button-link.html href="/contact/" label="Request a Quote" %}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,38 @@
+---
+layout: default
+scripts:
+  - projects-filter.js
+---
+{%- assign projects = site.projects | sort: "order" -%}
+{%- assign sectors = projects | map: "sector" | uniq -%}
+{%- assign countries = projects | map: "country" | uniq | sort -%}
+<h1 class="sr-only">Projects</h1>
+<section class="py-16">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6">
+    <div class="flex flex-col gap-4 border-b border-line pb-6 md:flex-row md:items-center md:justify-between">
+      <div role="group" aria-label="Filter by sector" class="flex flex-wrap gap-2">
+        <button type="button" aria-pressed="true" data-sector-filter="All" data-on="border-gold bg-gold text-white" data-off="border-line text-ink hover:border-gold" class="rounded-sm border px-4 py-2 text-sm transition-colors border-gold bg-gold text-white">All</button>
+        {%- for sector in sectors %}
+        <button type="button" aria-pressed="false" data-sector-filter="{{ sector | escape }}" data-on="border-gold bg-gold text-white" data-off="border-line text-ink hover:border-gold" class="rounded-sm border px-4 py-2 text-sm transition-colors border-line text-ink hover:border-gold">{{ sector }}</button>
+        {%- endfor %}
+      </div>
+      <label class="flex items-center gap-3 text-sm text-ink-muted">
+        Country
+        <select data-country-filter class="rounded-sm border border-line bg-paper px-3 py-2 text-ink">
+          <option>All</option>
+          {%- for country in countries %}
+          <option>{{ country }}</option>
+          {%- endfor %}
+        </select>
+      </label>
+    </div>
+
+    <p class="mt-6 text-sm text-ink-muted" aria-live="polite" data-project-count>{{ projects.size }} projects</p>
+    <div class="mt-6 grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3" data-project-grid>
+      {%- for project in projects %}
+      {% include project-card.html project=project is_priority=forloop.first %}
+      {%- endfor %}
+    </div>
+    <p class="py-16 text-center text-ink-muted" data-no-projects hidden>No projects match these filters yet.</p>
+  </div>
+</section>

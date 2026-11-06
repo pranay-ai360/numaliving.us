@@ -1,0 +1,4 @@
+{%- comment -%} A project's cover photo. Params: project, class, sizes, is_priority (for the first image on screen). {%- endcomment -%}
+{%- assign cover = include.project.images | first -%}
+{%- capture photo_class -%}object-cover {{ include.class }}{%- endcapture -%}
+{% include photo.html src=cover alt=include.project.title class=photo_class sizes=include.sizes is_priority=include.is_priority %}

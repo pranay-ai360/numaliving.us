@@ -1,0 +1,48 @@
+---
+layout: default
+scripts:
+  - login.js
+---
+{%- assign field = "mt-1.5 w-full rounded-sm border border-line bg-paper px-3.5 py-2.5 outline-none focus:border-gold disabled:bg-linen" -%}
+<section class="linen relative overflow-hidden">
+  {% include line-art.html class="pointer-events-none absolute inset-x-0 bottom-0 h-1/2 w-full text-gold/20" %}
+  <div class="relative mx-auto flex min-h-[640px] max-w-md flex-col justify-center px-4 py-16">
+    <div class="bg-paper p-8 shadow-[0_20px_60px_rgba(0,0,0,0.06)] sm:p-10">
+      <div class="text-center">
+        {% include wordmark.html %}
+        <h1 class="display mt-8 text-lg">Client Portal</h1>
+        <p class="mt-2 text-sm text-ink-muted">Drawings, approvals, RFIs and production status for your project.</p>
+      </div>
+      <div class="mt-8">
+        <form class="space-y-5" data-login-form>
+          <label class="block text-sm font-medium">
+            Email
+            <input name="email" type="email" required autocomplete="email" class="{{ field }}">
+          </label>
+          <label class="block text-sm font-medium" data-password-field>
+            Password
+            <input name="password" type="password" required autocomplete="current-password" class="{{ field }}">
+          </label>
+          <p role="status" class="text-sm text-ink-muted" data-login-message hidden></p>
+          <button type="submit" class="w-full rounded-sm bg-gold py-3 font-medium text-white transition-colors hover:bg-gold-dark disabled:opacity-50" data-login-submit>Sign In</button>
+        </form>
+
+        <div class="mt-6 flex justify-between text-sm">
+          <button type="button" class="text-gold hover:text-gold-dark disabled:opacity-50" data-login-mode>Forgot password?</button>
+          <a href="{{ '/contact/' | relative_url }}" class="text-ink-muted hover:text-gold">New project? Get in touch</a>
+        </div>
+
+        <div class="mt-8 border-t border-line pt-6 text-center" data-portal-url="{{ '/portal/' | relative_url }}">
+          <button type="button" class="text-sm font-medium text-gold hover:text-gold-dark" data-demo-reveal>See a demo of the client portal →</button>
+          <div class="space-y-3" data-demo-roles hidden>
+            <p class="text-sm text-ink-muted">Preview the portal with sample project data. Choose who to view it as:</p>
+            {%- for role in site.data.portal.roles %}
+            <button type="button" class="w-full rounded-sm border border-gold py-2.5 text-sm font-medium text-gold-dark transition-colors hover:bg-gold hover:text-white" data-demo-role="{{ role.key }}">View as {{ role.label }}</button>
+            {%- endfor %}
+            <p class="pt-1 text-xs text-ink-muted">Demo only. Nothing you do is saved.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

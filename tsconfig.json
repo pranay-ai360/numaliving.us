@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "allowJs": true,
+    "checkJs": true,
+    "strict": true,
+    "noEmit": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "types": ["node"]
+  },
+  "include": ["assets/js/**/*.js", "tests/**/*.ts", "e2e/**/*.ts", "*.ts", "*.mts"],
+  "exclude": ["node_modules", "_site", "reference-site", "assets/js/vendor/**"]
+}
