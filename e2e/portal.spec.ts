@@ -296,6 +296,13 @@ test.describe("Demo Portal", () => {
       // Assert
       await expect(signedIn(page)).toContainText(CONTRACTOR);
       await expect(page.getByRole("button", { name: "Confirm site is ready" })).toBeVisible();
+
+      // Act: moving on must not bring the old decision back
+      await goTo(page, /^Overview/, "/portal/");
+      await goTo(page, /^Production/, "/portal/tracking/");
+
+      // Assert
+      await expect(page.getByRole("button", { name: "Confirm site is ready" })).toBeVisible();
     });
 
     test("leaving the Demo Portal and coming back starts over", async ({ page }) => {

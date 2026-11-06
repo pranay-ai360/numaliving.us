@@ -97,12 +97,24 @@ function writeStorage(key, value) {
   }
 }
 
-/** The state to start this page with: carried over from another portal page, or fresh. */
+/** @param {string} key */
+function removeFromStorage(key) {
+  try {
+    sessionStorage.removeItem(key);
+  } catch {
+    // Storage unavailable: there is nothing saved to remove.
+  }
+}
+
+/**
+ * The state to start this page with: carried over from another portal page, or fresh. Starting over clears
+ * what was saved, or the next portal page would bring it back.
+ */
 function loadState() {
   const navigation = /** @type {PerformanceNavigationTiming | undefined} */ (performance.getEntriesByType("navigation")[0]);
   const referrerPath = document.referrer === "" ? "" : new URL(document.referrer).pathname;
-  const savedState = demo.shouldStartOver(navigation?.type, referrerPath, `${baseUrl}/portal`) ? null : readStorage(demo.DEMO_STATE_KEY);
-  return demo.restoreState(data, readStorage(demo.DEMO_ROLE_KEY), savedState);
+  if (demo.shouldStartOver(navigation?.type, referrerPath, `${baseUrl}/portal`)) removeFromStorage(demo.DEMO_STATE_KEY);
+  return demo.restoreState(data, readStorage(demo.DEMO_ROLE_KEY), readStorage(demo.DEMO_STATE_KEY));
 }
 
 /** The state every screen shares, and the changes it allows. */

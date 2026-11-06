@@ -23,3 +23,5 @@ npm-debug.log*
 # the Reference Site baseline, and local agent state
 /reference-site/
 /.claude/
+/.agents/
+/skills-lock.json

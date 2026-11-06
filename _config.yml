@@ -54,3 +54,4 @@ exclude:
   - coverage/
   - playwright-report/
   - test-results/
+  - skills-lock.json
