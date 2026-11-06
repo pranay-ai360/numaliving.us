@@ -1,0 +1,77 @@
+# Checks every pull request: lint, types, unit tests with coverage, the committed CSS, a build with
+# GitHub's own Jekyll, and the Playwright suite against that build. FormSubmit is mocked, and any other
+# off-machine request fails the test, so nothing is emailed.
+#
+# It runs on pull requests only, so GitHub Actions does not clog up with a run for each change:
+# `npm run check` runs the same checks locally, plus the comparison with the Reference Site, before a push.
+#
+# It does not deploy. GitHub Pages builds and publishes main by itself
+# (Settings > Pages > Source: "Deploy from a branch", branch main, folder /).
+
+name: Verify
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  # A newer push to a pull request makes the older run pointless.
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    name: Verify
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint -- --max-warnings=0
+
+      - name: Type check
+        run: npm run typecheck
+
+      - name: Unit tests with coverage
+        run: npm run test:coverage
+
+      - name: Committed CSS is up to date
+        run: npm run css:check
+
+      # The engine GitHub Pages uses for main, so a pull request is tested on what would be published.
+      - name: Build with GitHub's Jekyll
+        uses: actions/jekyll-build-pages@v1.0.13
+        with:
+          source: ./
+          destination: ./_site
+
+      - name: Install Playwright's Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: End-to-end tests
+        run: npm run test:e2e
+
+      - name: Upload the Playwright report
+        if: ${{ failure() }}
+        uses: actions/upload-artifact@v7
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 14
