@@ -2,13 +2,14 @@
  * The `test` every browser spec on the site uses. It fails a test when a page throws, logs a console
  * error, or makes a request to any host other than the site itself.
  *
- * Every build carries the real Form alias, so this guard is what stops a test from emailing Numa:
- * FormSubmit is off-machine, and a spec that presses Send must mock it with page.route, which wins over
- * the guard's route. The Reference Site's dev server prints its own console noise, so only the request
- * guard applies there.
+ * Every build embeds the real Tally form, so this is what stops a test from emailing Numa: each test gets a
+ * stand-in for Tally (./tally-stub), and anything else off-machine fails it. A spec's own page.route wins
+ * over both. The Reference Site's dev server prints its own console noise, so only the request guard
+ * applies there.
  */
 import { test as base, expect } from "@playwright/test";
 import { IS_REFERENCE_SITE, SITE_HOST } from "./env";
+import { standInForTally } from "./tally-stub";
 
 type GuardOptions = {
   /** Console errors a test expects, such as the browser's own line about a 500 response. */
@@ -38,6 +39,8 @@ export const test = base.extend<GuardOptions & GuardFixtures>({
         report(`request that would leave the machine: ${route.request().method()} ${route.request().url()}`);
         await route.abort("blockedbyclient");
       });
+      // Registered after the guard, so it wins for these addresses.
+      await standInForTally(context);
       if (!IS_REFERENCE_SITE) {
         page.on("pageerror", (error) => report(`uncaught error: ${error.message}`));
         page.on("console", (message) => {

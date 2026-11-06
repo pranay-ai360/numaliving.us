@@ -1,102 +1,22 @@
 {%- comment -%}
-  The "Request a Quote" form. assets/js/quote-form.js does the rest: it enables Send, lists the Drawings and
-  sends the Quote Request. Send starts disabled, so a press before the script runs cannot put the visitor's
-  details in the address bar. The choices below must match assets/js/quotes/fields.js (a test checks they do).
+  The "Request a Quote" form. Tally hosts it in an iframe, because it cannot take a submission from a form of our own
+  (ADR 0004), so its questions are edited in Tally. assets/js/quote-form.js opens it and shows the confirmation below.
+  The minimum heights are a little under the form's real ones, so the page does not jump as it loads.
 {%- endcomment -%}
-{%- assign field = "mt-1.5 w-full rounded-sm border border-line bg-paper px-3.5 py-2.5 text-ink outline-none transition-colors focus:border-gold" -%}
-{%- assign label = "block text-sm font-medium" -%}
-<div role="status" class="border border-gold bg-gold-soft p-8" data-quote-success hidden>
+{%- assign contact_email = site.data.site.contact.email -%}
+{%- capture contact_link -%}<a href="mailto:{{ contact_email }}" class="font-medium underline hover:text-gold-dark">{{ contact_email }}</a>{%- endcapture -%}
+<div role="status" tabindex="-1" class="border border-gold bg-gold-soft p-8" data-quote-success hidden>
   <p class="display text-lg text-gold">Thank You</p>
   <p class="mt-4 text-lg">We have your request. Our team will reply within two working days.</p>
   <p class="mt-2 text-sm text-ink-muted">Reference: <span data-quote-reference></span></p>
   <button type="button" class="mt-6 text-sm font-medium text-gold hover:text-gold-dark" data-quote-again>Send another request →</button>
 </div>
 
-<form class="space-y-8" data-quote-form data-form-id="{{ site.formsubmit_id }}">
-  {%- comment -%} A field no visitor can see or reach. Automated form fillers tend to fill every input, so a filled one marks a bot. It stays first, so space-y-8 is unaffected. {%- endcomment %}
-  <div hidden aria-hidden="true">
-    <label>
-      Leave this field empty
-      <input type="text" name="_honey" tabindex="-1" autocomplete="off">
-    </label>
-  </div>
-
-  <fieldset class="grid gap-5 sm:grid-cols-2">
-    <legend class="eyebrow mb-4">About you</legend>
-    <label class="{{ label }}">
-      Full name *
-      <input name="name" required autocomplete="name" class="{{ field }}">
-    </label>
-    <label class="{{ label }}">
-      Company
-      <input name="company" autocomplete="organization" class="{{ field }}">
-    </label>
-    <label class="{{ label }}">
-      Email *
-      <input name="email" type="email" required autocomplete="email" class="{{ field }}">
-    </label>
-    <label class="{{ label }}">
-      Phone / WhatsApp
-      <input name="phone" type="tel" autocomplete="tel" class="{{ field }}">
-    </label>
-    <label class="{{ label }} sm:col-span-2">
-      Your role *
-      <select name="role" required class="{{ field }}">
-        <option value="" disabled selected>Select…</option>
-        <option>Owner / developer</option>
-        <option>Architect / designer</option>
-        <option>Main contractor</option>
-        <option>Other</option>
-      </select>
-    </label>
-  </fieldset>
-
-  <fieldset class="grid gap-5 sm:grid-cols-2">
-    <legend class="eyebrow mb-4">The project</legend>
-    <label class="{{ label }}">
-      Project type *
-      <select name="projectType" required class="{{ field }}">
-        <option value="" disabled selected>Select…</option>
-        <option>Residences</option>
-        <option>Office</option>
-        <option>Multifamily</option>
-        <option>Hospitality</option>
-        <option>Other</option>
-      </select>
-    </label>
-    <label class="{{ label }}">
-      Site location (city, country) *
-      <input name="location" required class="{{ field }}" placeholder="e.g. Dubai, UAE">
-    </label>
-    <label class="{{ label }} sm:col-span-2">
-      Timeline *
-      <select name="timeline" required class="{{ field }}">
-        <option value="" disabled selected>Select…</option>
-        <option>Tendering now</option>
-        <option>Start within 3 months</option>
-        <option>Start in 3 to 6 months</option>
-        <option>Later / exploring</option>
-      </select>
-    </label>
-    <label class="{{ label }} sm:col-span-2">
-      Scope and notes *
-      <textarea name="message" required rows="5" class="{{ field }}" placeholder="What needs to be made, approximate quantities, finishes, anything else."></textarea>
-    </label>
-  </fieldset>
-
-  <fieldset>
-    <legend class="eyebrow mb-4">Drawings and sketches</legend>
-    <label class="flex cursor-pointer flex-col items-center justify-center rounded-sm border border-dashed border-gold/60 bg-linen px-6 py-8 text-center transition-colors hover:border-gold">
-      <span class="font-medium">Attach drawings or BOQ (PDF)</span>
-      <span class="mt-1 text-sm text-ink-muted">Up to 10 files, 9 MB in total</span>
-      <input type="file" accept="application/pdf" multiple class="sr-only" data-drawings-input>
-    </label>
-    <p role="alert" class="mt-2 text-sm text-red-700" data-file-error hidden></p>
-    <ul class="mt-3 divide-y divide-line border border-line" data-file-list hidden></ul>
-    <div class="mt-6"></div>
-  </fieldset>
-
-  <p role="alert" class="border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800" data-quote-error hidden></p>
-
-  <button type="submit" disabled class="w-full rounded-sm bg-gold px-8 py-3.5 font-medium tracking-wide text-white transition-colors hover:bg-gold-dark disabled:opacity-60 sm:w-auto" data-quote-send>Send Request</button>
-</form>
+<div data-quote-form>
+  <noscript>
+    <p class="mb-6"><a href="https://tally.so/r/{{ site.tally_form_id }}" class="font-medium underline hover:text-gold-dark">Open the form</a> on its own page, because this one needs JavaScript to show it.</p>
+  </noscript>
+  <iframe title="Request a Quote form" class="min-h-[1400px] w-full noscript:hidden sm:min-h-[1130px]" data-tally-embed data-form-id="{{ site.tally_form_id }}"></iframe>
+  <p role="alert" class="border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800" data-quote-error hidden>The form could not load. Please email your details and drawings to {{ contact_link }}.</p>
+  <p class="mt-6 text-sm text-ink-muted" data-quote-help>Trouble with the form? Email your details and drawings to {{ contact_link }}.</p>
+</div>

@@ -4,8 +4,6 @@ const COVERAGE_THRESHOLD_PERCENT = 80;
 
 export default defineConfig({
   test: {
-    // The quote modules use the browser's DOMParser, File and FormData.
-    environment: "jsdom",
     include: ["tests/**/*.test.ts"],
     coverage: {
       provider: "v8",

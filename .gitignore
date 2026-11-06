@@ -20,6 +20,9 @@
 npm-debug.log*
 *.tsbuildinfo
 
+# secrets
+/tally-api-key.json
+
 # the Reference Site baseline, and local agent state
 /reference-site/
 /.claude/

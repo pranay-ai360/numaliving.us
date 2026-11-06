@@ -1,5 +1,5 @@
 # Checks every pull request: lint, types, unit tests with coverage, the committed CSS, a build with
-# GitHub's own Jekyll, and the Playwright suite against that build. FormSubmit is mocked, and any other
+# GitHub's own Jekyll, and the Playwright suite against that build. Tally has a stand-in, and any other
 # off-machine request fails the test, so nothing is emailed.
 #
 # It runs on pull requests only, so GitHub Actions does not clog up with a run for each change:

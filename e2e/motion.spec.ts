@@ -154,19 +154,6 @@ test.describe("at 1440 px", () => {
     await expect(focused).toHaveCSS("outline-color", GOLD);
     await expect(focused).toHaveCSS("outline-width", "2px");
   });
-
-  test("a form field's border turns gold on focus", async ({ page }) => {
-    // Arrange
-    await page.goto(pageUrl("/contact/"));
-    const name = page.getByLabel("Full name");
-    await expect(name).toHaveCSS("transition-property", /color/);
-
-    // Act
-    await name.focus();
-
-    // Assert
-    await expect(name).toHaveCSS("border-top-color", GOLD);
-  });
 });
 
 test.describe("at 390 px", () => {

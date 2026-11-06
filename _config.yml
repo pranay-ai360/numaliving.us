@@ -10,8 +10,9 @@ baseurl: ""
 # Without this, GitHub adds its default theme and its stylesheet to the site.
 theme: false
 
-# The FormSubmit alias Quote Requests post to. It is public by design: it is in every page's source anyway.
-formsubmit_id: c95b560aaf0b2ae025507ec7e32335ba
+# The Tally form that takes Quote Requests. Its id is public by design: it is in every page's source anyway.
+# Tally's API key is not: it opens the whole account, so it never goes here or anywhere in the site.
+tally_form_id: PRDEkQ
 
 collections:
   projects:
@@ -55,3 +56,4 @@ exclude:
   - playwright-report/
   - test-results/
   - skills-lock.json
+  - tally-api-key.json

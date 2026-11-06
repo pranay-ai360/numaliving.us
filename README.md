@@ -9,9 +9,9 @@ The public website at https://numaliving.us. It is a static site built by Jekyll
 | Words on a page | `_data/home.yml`, `about.yml`, `capabilities.yml`, `process.yml`, or the page's own `index.html` |
 | A page's search title and description | `_data/pages.yml` |
 | A project | its file in `_projects/`. The file name is its address, and every project needs at least one photo |
-| The menu or the Contact email | `_data/site.yml`, and for the email also `assets/js/quotes/contact.js` |
+| The menu or the Contact email | `_data/site.yml` |
 | The Demo Portal's sample data | `_data/portal.yml` |
-| The form's choices | `_includes/quote-form.html` and `assets/js/quotes/fields.js` |
+| The form's questions and choices | In Tally's editor, not in this repo. `_config.yml` holds only the form's id |
 
 Photos go in `assets/projects/<folder>/`. A project's address and its photo folder can differ: `amherst` keeps its photos in `Amherst`. Keep file names from starting with `_`, `.`, `#` or `~`, because Jekyll skips those.
 
@@ -41,11 +41,11 @@ npm run check
 
 This runs what CI runs (lint, types, unit tests with coverage, the committed CSS, a Jekyll build, every Playwright spec), so GitHub Actions does not clog up with a run for each change. A pull request is checked once by `.github/workflows/verify.yml`, which never deploys.
 
-The tests mock FormSubmit, and any other off-machine request fails the test, so nothing is emailed.
+Every test gets a stand-in for Tally, and any other off-machine request fails the test, so nothing is emailed.
 
 ## What is real and what is a demo
 
-- **The Quote Request form sends real email**, through FormSubmit. A request with no Drawings goes to its AJAX endpoint, and one with Drawings to its ordinary endpoint, because the AJAX endpoint drops attachments. Keep `example.com` out of any real test: FormSubmit answers "Thanks!" and silently drops a post with attachments that mentions it.
+- **The Quote Request form is real.** Tally hosts it in an iframe on the Contact page, because it cannot take a submission from a form of our own. Requests are emailed to the Tally account's address, with Drawings as links, and stay in Tally's Submissions tab. Tally's API key is not used by the site and must never be committed: `tally-api-key.json` is git-ignored and excluded from builds. See `docs/adr/0004-quote-requests-through-tally.md`.
 - **Client Login and the Demo Portal are demos.** Nobody can sign in, the portal's data is invented, and nothing done in it is saved.
 
 ## Hosting

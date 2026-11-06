@@ -43,6 +43,7 @@ const NEVER_PUBLISHED = [
   "_tailwind/site.css",
   ".env.example",
   "reference-site/",
+  "tally-api-key.json",
 ];
 
 test.skip(IS_REFERENCE_SITE, "This checks the Jekyll build, not the Reference Site.");
