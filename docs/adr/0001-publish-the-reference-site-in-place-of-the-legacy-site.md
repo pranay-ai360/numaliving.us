@@ -9,5 +9,5 @@ These look like oversights to a later reader, but they are deliberate.
 - **No privacy or terms pages.** `/privacy/` and `/terms/` return 404, even though the Quote Request form collects personal data. The owner accepted this. The Legacy drafts remain readable in the archived repository (`src/content/legal.ts`).
 - **The Demo Portal is indexed.** The Reference Site marked it `noindex`, and the owner chose to index it, invented data included. Each page's description says it is a demo.
 - **Page titles are the Reference Site's.** The Legacy Site's keyword-researched titles were not kept. They and the research behind them remain in the archived repository (`docs/seo/`).
-- **Five project slugs differ from their photo folders.** `amherst` keeps its photos in `public/projects/Amherst/`, and `poppy-16` in `public/projects/Poppy_16/`. The slugs keep the Legacy Site's URLs, which were already submitted to Google.
-- **Firebase code stays, unused.** It belongs to the planned Client Portal. Quote Requests go by email for as long as Firebase is unconfigured.
+- **Five project slugs differ from their photo folders.** `amherst` keeps its photos in `assets/projects/Amherst/`, and `poppy-16` in `assets/projects/Poppy_16/`. The slugs keep the Legacy Site's URLs, which were already submitted to Google.
+- **Firebase code is not carried over.** This changed when the owner chose Jekyll (ADR 0002). It belongs to the planned Client Portal, and remains readable on the `Ramya` branch of the archived repository. Quote Requests go by email.

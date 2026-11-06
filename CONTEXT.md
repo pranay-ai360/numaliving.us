@@ -41,7 +41,7 @@ The random-string id FormSubmit issued once the Contact email was confirmed. Quo
 _Avoid_: form key, form token, mailbox id
 
 **Page registry**:
-The list with one entry per page: its address, title, description and share image. The page metadata, the sitemap and the tests all read it.
+The list in `_data/pages.yml` with one entry per static page: its address, title and description. Each project keeps the same details in its own `_projects/` file. The page head and the sitemap read them, and the tests check what comes out.
 _Avoid_: SEO file, meta file
 
 **Client Login**:
