@@ -5,8 +5,8 @@
  */
 import { existsSync, readdirSync, statSync } from "node:fs";
 import path from "node:path";
-import { expect, test } from "@playwright/test";
 import { IS_EXTERNAL_SITE, IS_REFERENCE_SITE } from "./env";
+import { expect, test } from "./fixtures";
 import { ALL_PAGES, pageUrl } from "./site";
 
 const SITE_URL = "https://numaliving.us";

@@ -1,8 +1,8 @@
 // @ts-check
 /**
  * Reference for a Quote Request, such as "NL-K7M2QX". The visitor sees it on
- * the confirmation, and Numa sees it in the email subject, so the two can be
- * matched up in a follow-up.
+ * the confirmation, and Numa sees it among the request's answers, so the two
+ * can be matched up in a follow-up.
  */
 
 const REFERENCE_PREFIX = "NL-";

@@ -36,9 +36,9 @@ _Avoid_: plans, uploads
 The public address printed on the site and named in every "email us instead" message: `projects@numaliving.us`. Mail to it is received through Forward Email.
 _Avoid_: inquiries address, info address
 
-**Form alias**:
-The random-string id FormSubmit issued once the Contact email was confirmed. Quote Requests post to it, and it is public by design.
-_Avoid_: form key, form token, mailbox id
+**Tally form**:
+The form in Tally that takes Quote Requests, embedded on the Contact page. Its id is in `_config.yml` and is public by design, unlike Tally's API key, which never goes in the site.
+_Avoid_: form key, form token
 
 **Page registry**:
 The list in `_data/pages.yml` with one entry per static page: its address, title and description. Each project keeps the same details in its own `_projects/` file. The page head and the sitemap read them, and the tests check what comes out.

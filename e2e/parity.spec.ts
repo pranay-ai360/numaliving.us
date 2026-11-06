@@ -9,6 +9,7 @@
 import { expect, test, type Page } from "@playwright/test";
 import { IS_REFERENCE_SITE } from "./env";
 import { ALL_PAGES, pageName, pageUrl } from "./site";
+import { standInForTally } from "./tally-stub";
 
 const WIDTHS = [390, 1440];
 const VIEWPORT_HEIGHT = 900;
@@ -16,11 +17,18 @@ const SCROLL_PAUSE_MS = 60;
 const TEST_TIMEOUT_MS = 180_000;
 const SCREENSHOT_TIMEOUT_MS = 60_000;
 
-/** "Visible changes" 1 and 2 in the plan. The Reference Site's text is corrected before it is saved. */
-const ALLOWED_TEXT_CHANGES: readonly (readonly [string, string])[] = [
-  ["projects@numaliving.com", "projects@numaliving.us"],
-  ["Up to 10 files, 25 MB each", "Up to 10 files, 9 MB in total"],
-];
+/** "Visible change" 1 in the plan. The Reference Site's text is corrected before it is saved. */
+const ALLOWED_TEXT_CHANGES: readonly (readonly [string, string])[] = [["projects@numaliving.com", "projects@numaliving.us"]];
+
+/**
+ * "Visible change" 8: Tally hosts the form now, so the rest of the Contact page is what can be compared. An empty
+ * block stays in its place, so the column beside it does not move.
+ */
+function setTheFormAside(page: Page): Promise<void> {
+  return page.evaluate(() => {
+    document.querySelectorAll("form, [data-quote-form]").forEach((form) => form.replaceWith(document.createElement("div")));
+  });
+}
 
 function comparableText(raw: string): string {
   const corrected = IS_REFERENCE_SITE
@@ -102,7 +110,9 @@ for (const width of WIDTHS) {
         test.setTimeout(TEST_TIMEOUT_MS);
 
         // Arrange
+        await standInForTally(page.context());
         await page.goto(pageUrl(path));
+        if (path === "/contact/") await setTheFormAside(page);
         await settle(page);
         const name = `${pageName(path)}-${width}`;
 
