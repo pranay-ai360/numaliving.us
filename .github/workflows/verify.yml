@@ -55,6 +55,9 @@ jobs:
       - name: Committed CSS is up to date
         run: npm run css:check
 
+      - name: Photo copies are up to date
+        run: npm run images:check
+
       # The engine GitHub Pages uses for main, so a pull request is tested on what would be published.
       - name: Build with GitHub's Jekyll
         uses: actions/jekyll-build-pages@v1.0.13

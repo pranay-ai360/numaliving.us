@@ -20,6 +20,9 @@ npm run --silent test:coverage
 step "Committed CSS is up to date"
 npm run --silent css:check
 
+step "Photo copies are up to date"
+npm run --silent images:check
+
 step "Jekyll build with GitHub's image"
 npm run --silent build:site
 

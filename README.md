@@ -15,6 +15,8 @@ The public website at https://numaliving.us. It is a static site built by Jekyll
 
 Photos go in `assets/projects/<folder>/`. A project's address and its photo folder can differ: `amherst` keeps its photos in `Amherst`. Keep file names from starting with `_`, `.`, `#` or `~`, because Jekyll skips those.
 
+After adding or changing a photo, run `npm run images:build` and commit what it writes. It makes small AVIF and WebP copies next to each photo the pages name, and records them in `_data/photos.json`. GitHub's build cannot do this, and `npm run images:check` fails if they are out of date.
+
 The map on the About page is a fixed drawing in `_includes/world-map.html`. To add a place, copy one of its `<g>` blocks. A place's position is `x = (lon + 180) * 1000 / 360` and `y = (84 - lat) * 1000 / 360`.
 
 A new file or folder at the top of the repo is **published** unless it is listed under `exclude` in `_config.yml`. That includes Markdown. `e2e/published-files.spec.ts` fails if one is missed.
@@ -26,6 +28,7 @@ You need Node 24 and Docker.
 ```bash
 npm ci
 npm run css          # after changing classes in a template: compiles assets/css/site.css, which is committed
+npm run images:build # after changing a photo: makes its small copies, which are committed
 npm run build:site   # builds _site/ with the image GitHub Pages uses
 npm run serve:pages  # serves _site/ on http://127.0.0.1:4173, the way GitHub Pages does
 ```

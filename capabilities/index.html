@@ -9,9 +9,9 @@ layout: default
     <div class="grid grid-cols-2 gap-2 md:h-[30rem] md:grid-cols-4 md:grid-rows-2">
       {%- for photo in capabilities.craft limit: 5 -%}
       {%- if forloop.first %}
-      {% include photo-tile.html photo=photo class="col-span-2 aspect-[4/3] md:aspect-auto md:row-span-2" %}
+      {% include photo-tile.html photo=photo class="col-span-2 aspect-[4/3] md:aspect-auto md:row-span-2" sizes="(min-width: 768px) 50vw, 100vw" %}
       {%- else %}
-      {% include photo-tile.html photo=photo class="aspect-square md:aspect-auto" %}
+      {% include photo-tile.html photo=photo class="aspect-square md:aspect-auto" sizes="(min-width: 768px) 25vw, 50vw" %}
       {%- endif -%}
       {%- endfor %}
     </div>
@@ -39,7 +39,7 @@ layout: default
   <div class="mx-auto max-w-7xl px-4 sm:px-6">
     {% include section-title.html ghost="Factory" title=capabilities.factory.title %}
     <p class="mt-6 max-w-2xl text-lg leading-relaxed text-ink-muted">{{ capabilities.factory.lead }}</p>
-    {% include photo-tile.html photo=capabilities.factory.photo class="mt-10 aspect-[16/7] w-full" %}
+    {% include photo-tile.html photo=capabilities.factory.photo class="mt-10 aspect-[16/7] w-full" sizes="(min-width: 1280px) 1232px, 100vw" %}
     <ol class="mt-12 grid gap-x-10 gap-y-6 sm:grid-cols-2 lg:grid-cols-3">
       {%- for zone in capabilities.factory.zones %}
       <li class="border-t-2 border-gold pt-4">
