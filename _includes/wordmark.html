@@ -1,0 +1,10 @@
+{%- comment -%} Text wordmark in the Condor style. size="lg" is the large one on the home page. {%- endcomment -%}
+<span class="inline-flex flex-col items-center leading-none text-gold">
+  {%- if include.size == "lg" %}
+  <span class="display font-normal text-5xl sm:text-6xl" style="letter-spacing:0.08em">{{ site.data.site.wordmark }}</span>
+  <span class="font-semibold mt-3 text-xs" style="letter-spacing:0.9em;margin-right:-0.9em">{{ site.data.site.wordmark_sub }}</span>
+  {%- else %}
+  <span class="display font-normal text-2xl sm:text-3xl" style="letter-spacing:0.08em">{{ site.data.site.wordmark }}</span>
+  <span class="font-semibold mt-1.5 text-[0.55rem]" style="letter-spacing:0.75em;margin-right:-0.75em">{{ site.data.site.wordmark_sub }}</span>
+  {%- endif %}
+</span>

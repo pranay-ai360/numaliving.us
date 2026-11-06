@@ -1,0 +1,172 @@
+@import "tailwindcss" source(none);
+
+/* Only the files that make up the site, so the output does not depend on docs or tests. */
+@source "../_layouts";
+@source "../_includes";
+@source "../assets/js";
+@source not "../assets/js/vendor";
+@source "../index.html";
+@source "../404.html";
+@source "../about";
+@source "../capabilities";
+@source "../contact";
+@source "../login";
+@source "../portal";
+@source "../process";
+@source "../projects";
+
+/*
+ * Self-hosted fonts (both are free Google Fonts, SIL Open Font License).
+ * Michroma: wide display face close to the Condor headings. Montserrat: body text.
+ * The Fallback faces reshape Arial to the same metrics, so text does not shift when the fonts load.
+ */
+@font-face {
+  font-family: display;
+  src: url("../fonts/michroma-400.woff2") format("woff2");
+  font-display: swap;
+  font-weight: 400;
+}
+@font-face {
+  font-family: "display Fallback";
+  src: local(Arial);
+  ascent-override: 81.35%;
+  descent-override: 18.69%;
+  line-gap-override: 0%;
+  size-adjust: 142.13%;
+}
+@font-face {
+  font-family: body;
+  src: url("../fonts/montserrat-variable.woff2") format("woff2");
+  font-display: swap;
+  font-weight: 100 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: body;
+  src: url("../fonts/montserrat-variable-italic.woff2") format("woff2");
+  font-display: swap;
+  font-weight: 100 900;
+  font-style: italic;
+}
+@font-face {
+  font-family: "body Fallback";
+  src: local(Arial);
+  ascent-override: 87.85%;
+  descent-override: 22.78%;
+  line-gap-override: 0%;
+  size-adjust: 110.19%;
+}
+
+/* Outside any layer, so it wins over the theme's self-reference to these two names below. */
+html {
+  --font-display: "display", "display Fallback";
+  --font-body: "body", "body Fallback";
+}
+
+/*
+ * ─────────────────────────────────────────────────────────────
+ *  NUMA LIVING THEME — the only place brand colours live.
+ *  Derived from the Condor Developers website (gold on warm
+ *  off-white, wide uppercase display type, thin gold line-art).
+ *  Change a value here and the whole site follows.
+ * ─────────────────────────────────────────────────────────────
+ */
+:root {
+  --brand-gold: #ac8f50;        /* Condor gold: logo, links, buttons */
+  --brand-gold-dark: #8a713b;   /* hover / pressed */
+  --brand-gold-soft: #f3ead9;   /* cream tint: chips, highlights */
+  --brand-ink: #261e0f;         /* headings and body text */
+  --brand-ink-muted: #6b665e;   /* secondary text */
+  --brand-paper: #ffffff;       /* page background */
+  --brand-linen: #f7f5f4;       /* textured band background */
+  --brand-line: #e6e0d6;        /* hairlines and borders */
+}
+
+@theme inline {
+  --color-gold: var(--brand-gold);
+  --color-gold-dark: var(--brand-gold-dark);
+  --color-gold-soft: var(--brand-gold-soft);
+  --color-ink: var(--brand-ink);
+  --color-ink-muted: var(--brand-ink-muted);
+  --color-paper: var(--brand-paper);
+  --color-linen: var(--brand-linen);
+  --color-line: var(--brand-line);
+  --font-sans: var(--font-body);
+  --font-display: var(--font-display);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+main {
+  overflow-x: clip;
+}
+
+body {
+  background: var(--brand-paper);
+  color: var(--brand-ink);
+  font-family: var(--font-body), system-ui, sans-serif;
+}
+
+@layer components {
+  /* Wide, uppercase display headings in the Condor style */
+  .display {
+    font-family: var(--font-display), system-ui, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    line-height: 1.15;
+  }
+
+  /* Letter-spaced small caps used under the logo and for eyebrows */
+  .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.32em;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--brand-gold);
+  }
+
+  /* Large outlined "ghost" word behind section titles (e.g. ABOUT) */
+  .ghost-word {
+    font-family: var(--font-display), system-ui, sans-serif;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--brand-line);
+    line-height: 1;
+    user-select: none;
+    pointer-events: none;
+  }
+
+  /* Linen band with a subtle woven texture, like the Condor hero */
+  .linen {
+    background-color: var(--brand-linen);
+    background-image:
+      repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.012) 0 1px, transparent 1px 3px),
+      repeating-linear-gradient(90deg, rgba(0, 0, 0, 0.01) 0 1px, transparent 1px 4px);
+  }
+}
+
+:focus-visible {
+  outline: 2px solid var(--brand-gold);
+  outline-offset: 2px;
+}
+
+/* Gentle pulse on the factory marker; switched off for people who prefer less motion */
+@keyframes map-pulse {
+  0%, 100% { transform: scale(1); opacity: 0.18; }
+  50% { transform: scale(1.8); opacity: 0.05; }
+}
+.map-pulse {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: map-pulse 3s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .map-pulse { animation: none; }
+}
+
+/* Demo Portal parts that wait for Alpine, so their raw templates never show. */
+[x-cloak] {
+  display: none !important;
+}

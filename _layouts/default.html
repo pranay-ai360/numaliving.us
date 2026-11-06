@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en" class="h-full antialiased">
+  <head>
+    {% include head.html %}
+  </head>
+  <body class="flex min-h-full flex-col">
+    <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:bg-paper focus:p-2">Skip to content</a>
+    {% include header.html %}
+    <main id="main" class="flex-1">
+      {{ content }}
+    </main>
+    {% include footer.html %}
+    {% assign url_start = page.url | slice: 0, 7 %}
+    {% unless url_start == "/portal" %}{% include floating-actions.html %}{% endunless %}
+    <script src="{{ '/assets/js/site.js' | relative_url }}" defer></script>
+    {% for script in page.scripts %}<script type="module" src="{{ script | prepend: '/assets/js/' | relative_url }}"></script>{% endfor %}
+  </body>
+</html>

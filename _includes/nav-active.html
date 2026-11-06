@@ -1,0 +1,8 @@
+{%- comment -%} Sets is_active for include.href: the home link only on the home page, others on their page and below it. {%- endcomment -%}
+{%- assign is_active = false -%}
+{%- if include.href == "/" -%}
+  {%- if page.url == "/" -%}{%- assign is_active = true -%}{%- endif -%}
+{%- else -%}
+  {%- assign url_start = page.url | slice: 0, include.href.size -%}
+  {%- if url_start == include.href -%}{%- assign is_active = true -%}{%- endif -%}
+{%- endif -%}

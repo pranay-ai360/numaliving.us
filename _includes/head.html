@@ -1,0 +1,44 @@
+{%- comment -%}
+  Everything search engines and social networks are told about a page. Static pages read the Page registry in
+  _data/pages.yml, and project pages their own front matter. Canonical and share addresses use site.url and
+  page.url directly, because absolute_url would add baseurl and these must always name the real site.
+{%- endcomment -%}
+{%- assign entry = site.data.pages | where: "url", page.url | first -%}
+{%- assign title = entry.title | default: page.title -%}
+{%- assign description = entry.description | default: page.description -%}
+{%- if page.url == "/" -%}
+  {%- assign full_title = title -%}
+{%- else -%}
+  {%- assign full_title = title | append: " | " | append: site.title -%}
+{%- endif -%}
+{%- assign share_image = page.images[0] | default: "/assets/projects/Primrose/Living-01-out-1400x788.jpg" | uri_escape -%}
+<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preload" href="{{ '/assets/fonts/michroma-400.woff2' | relative_url }}" as="font" crossorigin="" type="font/woff2">
+    <link rel="preload" href="{{ '/assets/fonts/montserrat-variable.woff2' | relative_url }}" as="font" crossorigin="" type="font/woff2">
+    <link rel="preload" href="{{ '/assets/fonts/montserrat-variable-italic.woff2' | relative_url }}" as="font" crossorigin="" type="font/woff2">
+    <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
+    <title>{{ full_title | escape }}</title>
+    {%- if page.url == "/404.html" %}
+    <meta name="robots" content="noindex">
+    {%- else %}
+    <meta name="description" content="{{ description | escape }}">
+    <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+    <meta property="og:site_name" content="{{ site.title | escape }}">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="{{ full_title | escape }}">
+    <meta property="og:description" content="{{ description | escape }}">
+    <meta property="og:image" content="{{ site.url }}{{ share_image }}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ full_title | escape }}">
+    <meta name="twitter:description" content="{{ description | escape }}">
+    <meta name="twitter:image" content="{{ site.url }}{{ share_image }}">
+    {%- endif %}
+    <link rel="icon" href="{{ '/icon.png' | relative_url }}" sizes="512x512" type="image/png">
+    <link rel="icon" href="{{ '/icon.svg' | relative_url }}" sizes="any" type="image/svg+xml">
+    {%- if page.url == "/" %}
+    {% include json-ld.html %}
+    {%- endif %}
+    <script type="speculationrules">{"prefetch":[{"where":{"href_matches":"/*"},"eagerness":"moderate"}]}</script>
