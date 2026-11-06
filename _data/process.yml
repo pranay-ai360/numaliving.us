@@ -1,0 +1,36 @@
+# The steps on the Process page. `phase` groups steps under a heading, so keep a phase's steps together. `icon` is one of: enquiry, responsibilities, drawings, samples, production, quality, shipping, handover.
+title: How We Work
+lead: A clear path from first conversation to handover. Once a project starts, every step is tracked in your client portal.
+steps:
+  - phase: Brief
+    icon: enquiry
+    name: Enquiry & Tender
+    text: Send drawings, a BOQ or even a hand sketch. We review scope and return a priced proposal.
+  - phase: Brief
+    icon: responsibilities
+    name: Responsibilities
+    text: At kick-off we agree who on your team uploads drawings, approves samples and signs off quotes.
+  - phase: Approve
+    icon: drawings
+    name: Shop Drawings
+    text: Our engineers issue shop drawings for review. They are revised until approved.
+  - phase: Approve
+    icon: samples
+    name: Samples & Mock-ups
+    text: Finishes, veneers and hardware are sampled and approved before production.
+  - phase: Make
+    icon: production
+    name: Production
+    text: Items move through machining, assembly and finishing, with photos at each stage.
+  - phase: Make
+    icon: quality
+    name: Quality Control
+    text: Every piece is checked and dry-fitted against approved drawings.
+  - phase: Deliver
+    icon: shipping
+    name: Packing & Shipping
+    text: Export-crated and shipped, with container and tracking details shared online.
+  - phase: Deliver
+    icon: handover
+    name: Installation & Handover
+    text: We provide 24/7 support to your local install team until installation is complete.

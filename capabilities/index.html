@@ -1,0 +1,63 @@
+---
+layout: default
+---
+{%- assign capabilities = site.data.capabilities -%}
+{% include page-hero.html eyebrow="Capabilities" title="What We Make, and Where" lead=capabilities.lead %}
+
+<section class="pt-16">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6">
+    <div class="grid grid-cols-2 gap-2 md:h-[30rem] md:grid-cols-4 md:grid-rows-2">
+      {%- for photo in capabilities.craft limit: 5 -%}
+      {%- if forloop.first %}
+      {% include photo-tile.html photo=photo class="col-span-2 aspect-[4/3] md:aspect-auto md:row-span-2" %}
+      {%- else %}
+      {% include photo-tile.html photo=photo class="aspect-square md:aspect-auto" %}
+      {%- endif -%}
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="py-16">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6">
+    <div class="grid gap-px bg-line md:grid-cols-2 lg:grid-cols-3">
+      {%- for group in capabilities.groups %}
+      <div class="bg-paper p-7">
+        <h2 class="display text-sm text-gold">{{ group.name }}</h2>
+        <ul class="mt-4 space-y-2">
+          {%- for item in group.items %}
+          <li class="flex gap-3 text-sm"><span aria-hidden="true" class="mt-2 h-px w-4 shrink-0 bg-gold"></span>{{ item }}</li>
+          {%- endfor %}
+        </ul>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="factory" class="linen py-16 sm:py-20">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6">
+    {% include section-title.html ghost="Factory" title=capabilities.factory.title %}
+    <p class="mt-6 max-w-2xl text-lg leading-relaxed text-ink-muted">{{ capabilities.factory.lead }}</p>
+    {% include photo-tile.html photo=capabilities.factory.photo class="mt-10 aspect-[16/7] w-full" %}
+    <ol class="mt-12 grid gap-x-10 gap-y-6 sm:grid-cols-2 lg:grid-cols-3">
+      {%- for zone in capabilities.factory.zones %}
+      <li class="border-t-2 border-gold pt-4">
+        <span class="display text-xs text-gold">{% if forloop.index < 10 %}0{% endif %}{{ forloop.index }}</span>
+        <h3 class="mt-1 font-semibold">{{ zone.name }}</h3>
+        <p class="mt-1 text-sm leading-relaxed text-ink-muted">{{ zone.text }}</p>
+      </li>
+      {%- endfor %}
+    </ol>
+  </div>
+</section>
+
+<section class="py-16">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-center">
+    <p class="max-w-xl text-ink-muted">Not on the list? If it is built in a factory and finished by hand, ask us. Visiting the region? We welcome factory tours and sample reviews.</p>
+    <div class="flex flex-wrap gap-3">
+      {% include button-link.html href="/contact/" label="Ask About Your Scope" %}
+      {% include button-link.html href="/contact/" label="Book a Visit" variant="outline" %}
+    </div>
+  </div>
+</section>

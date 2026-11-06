@@ -1,0 +1,5 @@
+{%- comment -%} One photo with its caption over the lower edge. Params: photo (src, alt, caption), class. {%- endcomment -%}
+<figure class="group relative overflow-hidden {{ include.class }}">
+  <img src="{{ include.photo.src | relative_url | uri_escape }}" alt="{{ include.photo.alt | escape }}" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]" loading="lazy" decoding="async">
+  <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/60 to-transparent px-4 pb-3 pt-10 text-xs font-medium uppercase tracking-[0.2em] text-white">{{ include.photo.caption }}</figcaption>
+</figure>

@@ -1,0 +1,2 @@
+{%- comment -%} A project's cover photo. Params: project, class, is_priority (for the first image on screen). {%- endcomment -%}
+<img src="{{ include.project.images[0] | relative_url | uri_escape }}" alt="{{ include.project.title | escape }}" class="object-cover {{ include.class }}" {% if include.is_priority %}loading="eager" fetchpriority="high"{% else %}loading="lazy" decoding="async"{% endif %}>

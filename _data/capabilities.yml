@@ -1,0 +1,75 @@
+# Words and photos on the Capabilities page. The first craft photo is shown large.
+lead: Everything made of wood, veneer and lacquer in a premium interior, and the stone, metal and glass that meet it.
+groups:
+  - name: Wall & Ceiling
+    items:
+      - Veneer wall panelling
+      - Fluted and slatted panels
+      - Acoustic panels
+      - Ceiling features
+  - name: Kitchens & Wardrobes
+    items:
+      - Bespoke kitchens
+      - Walk-in wardrobes
+      - Dressing rooms
+      - Vanities
+  - name: Doors & Openings
+    items:
+      - Flush and panelled doors
+      - Concealed doors
+      - Fire-rated doors
+      - Architraves and frames
+  - name: Statement Pieces
+    items:
+      - Reception desks
+      - Bars and counters
+      - Libraries and media walls
+      - Stair cladding
+  - name: Loose Furniture (FF&E)
+    items:
+      - Tables
+      - Beds and headboards
+      - Cabinets and consoles
+      - Custom upholstery frames
+  - name: Finishes & Integration
+    items:
+      - Natural veneers
+      - High-gloss and matt lacquer
+      - Solid surface
+      - Metal, stone and glass inlays
+craft:
+  - src: /assets/projects/Primrose/Living-01-out-1400x788.jpg
+    alt: Bookmatched walnut veneer wall panel
+    caption: Bookmatched veneer
+  - src: /assets/craft/veneer-laying.jpg
+    alt: Craftsmen laying a veneer sheet onto a panel before hot pressing
+    caption: Veneer laid by hand
+  - src: /assets/craft/lobby-out-2-1400x788.jpg
+    alt: Brass inlay detail in a joinery piece
+    caption: Brass inlay
+  - src: /assets/craft/lacquer-spray-booth.jpg
+    alt: Finisher spraying lacquer onto a wood-veneer frame in the spray booth
+    caption: Hand-finished lacquer
+  - src: /assets/craft/edgebanding.jpg
+    alt: Machinist feeding a panel through the edgebanding machine
+    caption: Joints you never see
+factory:
+  title: The Factory
+  lead: One roof, from raw board to export crate. Owning every stage is how we control quality and programme.
+  zones:
+    - name: Engineering
+      text: Shop drawings and cutting lists produced from your approved design.
+    - name: Machining
+      text: Panel saws, edgebanders and boring machines for repeatable precision.
+    - name: Veneer
+      text: Veneer selection, laying and hot pressing onto panels.
+    - name: Finishing
+      text: Spray booths for lacquer and paint finishes, matched to approved samples.
+    - name: Assembly & QC
+      text: Pre-assembly and dry-fitting, checked against drawings before anything is packed.
+    - name: Export Packing
+      text: Crated, labelled by room and sequence, ready for container shipping.
+  photo:
+    src: /assets/craft/factory-jointer.jpg
+    alt: Craftsmen straightening timber on the jointer, Numa Living factory, Dubai
+    caption: The factory floor, Dubai

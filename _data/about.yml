@@ -1,0 +1,28 @@
+# Words on the About page. The regions are a SAMPLE list.
+title: From Dubai to the World
+lead: Numa Living is the millwork arm of the Conqueror Group, a family enterprise with decades of experience in contracting, development and hospitality across the world. We craft your dream finishes in Dubai and deliver it around the world.
+body:
+  - "We started Numa because the projects we built as developers needed joinery we could not buy: precise, beautifully finished and delivered on the contractor's programme, not the workshop's."
+  - Today we work directly with owners, architects and main contractors. Our engineers turn design intent into shop drawings, our factory produces to millimetre tolerances, and our site teams install and hand over.
+delivery:
+  title: Door to Site
+  regions:
+    - name: Middle East
+      countries:
+        - UAE
+        - Qatar
+    - name: Asia
+      countries:
+        - India
+    - name: North America
+      countries:
+        - United States
+  points:
+    - name: Export packing
+      text: Moisture-protected, crated and labelled by room and install sequence.
+    - name: Freight
+      text: Sea freight through established logistics partners, with tracking shared online.
+    - name: Installation
+      text: Our own installers, or supervision of your local team, wherever the site is.
+    - name: After care
+      text: Spare parts, touch-up kits and a defects period on every project.

@@ -1,0 +1,21 @@
+# Site-wide settings: name, contact details, navigation.
+wordmark: NUMA
+wordmark_sub: LIVING
+group: A Conqueror Group company
+# The day the content last changed in a way worth telling search engines. The sitemap prints it.
+last_updated: "2026-11-06"
+contact:
+  email: projects@numaliving.us
+nav:
+  - label: Home
+    href: /
+  - label: About
+    href: /about/
+  - label: Projects
+    href: /projects/
+  - label: Capabilities
+    href: /capabilities/
+  - label: Process
+    href: /process/
+  - label: Contact
+    href: /contact/

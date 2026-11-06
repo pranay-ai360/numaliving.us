@@ -1,0 +1,13 @@
+# Words on the home page. The figures are SAMPLE placeholders and must be replaced with real ones.
+hero_title: Woodwork, Mastered
+hero_sub: UAE · Qatar · USA
+intro: "Numa Living crafts details that defines a room: panelled walls, kitchens, wardrobes, doors and statement pieces, engineered in-house and installed anywhere in the world."
+stats:
+  - value: 45+
+    label: Projects delivered
+  - value: "4"
+    label: Countries shipped to
+  - value: 8,000 sq ft
+    label: Factory floor
+  - value: "50"
+    label: Craftspeople and engineers
