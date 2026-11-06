@@ -1,0 +1,2 @@
+{%- comment -%} Small status label. Params: tone (waiting, ok, warn, muted), label. {%- endcomment -%}
+<span class="whitespace-nowrap px-2 py-1 text-[11px] font-semibold {% case include.tone %}{% when 'waiting' %}bg-gold-soft text-ink{% when 'ok' %}bg-[#e3eadc] text-[#33502a]{% when 'warn' %}bg-[#f6e3dc] text-[#8a3a22]{% else %}bg-[#ece8e1] text-ink-muted{% endcase %}">{{ include.label }}</span>

@@ -1,0 +1,42 @@
+---
+layout: default
+---
+{%- assign portal = site.data.portal -%}
+<script type="application/json" id="portal-data" data-base-url="{{ site.baseurl }}">{{ portal | jsonify }}</script>
+<div class="flex min-h-[calc(100vh-5rem)] flex-col bg-linen md:flex-row" x-data>
+  <aside class="bg-ink text-white md:w-64 md:shrink-0">
+    <div class="flex flex-col gap-6 p-5 md:sticky md:top-0 md:p-6">
+      <div class="border border-white/15 px-4 py-3">
+        <p class="text-[10px] font-semibold uppercase tracking-[0.24em] text-gold">Project</p>
+        <p class="mt-1.5 font-semibold">{{ portal.project.name }}</p>
+        <p class="text-xs text-white/70">{{ portal.project.location }}</p>
+      </div>
+      <nav aria-label="Portal" class="flex gap-1 overflow-x-auto md:flex-col md:overflow-visible">
+        <template x-for="item in $store.demo.nav" :key="item.href">
+          <a :href="$store.demo.url(item.href)" :aria-current="item.href === '{{ page.url }}' ? 'page' : null" class="flex min-h-11 shrink-0 items-center gap-3 px-3 text-sm transition-colors" :class="item.href === '{{ page.url }}' ? 'border-l-2 border-gold bg-white/10 font-semibold text-white' : 'text-white/75 hover:text-white'"><span x-text="item.label"></span><template x-if="item.n > 0"><span class="ml-auto bg-gold px-1.5 py-0.5 text-[11px] font-bold text-ink" x-text="item.n"></span></template></a>
+        </template>
+      </nav>
+      <div class="hidden border-t border-white/15 pt-4 text-xs leading-relaxed text-white/70 md:block">
+        Your Numa project manager
+        <br>
+        <span class="font-semibold text-white">[PM NAME]</span> · WhatsApp
+      </div>
+    </div>
+  </aside>
+
+  <div class="min-w-0 flex-1">
+    <div class="flex flex-wrap items-center justify-between gap-3 border-b border-line bg-paper px-5 py-3 sm:px-8">
+      <p class="text-sm text-ink-muted">Signed in as <span class="font-semibold text-ink" x-text="$store.demo.personDetails.name"></span> · <span x-text="$store.demo.personDetails.org"></span><template x-if="$store.demo.isClientAdmin"><span class="ml-2 text-[10px] font-bold uppercase tracking-[0.14em] text-gold-dark">Client admin</span></template></p>
+      <div role="group" aria-label="Demo: view the portal as" class="flex flex-wrap items-center gap-1 border border-dashed border-gold p-1">
+        <span class="px-2 text-[10px] font-semibold uppercase tracking-[0.16em] text-gold-dark">Demo: view as</span>
+        {%- for role in portal.roles %}
+        <button type="button" :aria-pressed="$store.demo.state.role === '{{ role.key }}'" @click="$store.demo.setRole('{{ role.key }}')" class="min-h-9 px-3 text-sm transition-colors" :class="$store.demo.state.role === '{{ role.key }}' ? 'bg-ink font-semibold text-white' : 'text-ink hover:bg-gold-soft'">{{ role.label }}</button>
+        {%- endfor %}
+      </div>
+    </div>
+    <div class="px-5 py-8 sm:px-8 lg:px-10"{% if page.view %} x-data="{{ page.view }}"{% endif %}>
+      {{ content }}
+    </div>
+    <p class="px-5 pb-8 text-xs text-ink-muted sm:px-8 lg:px-10">Demo with sample data. Nothing is saved: refreshing the page starts over.</p>
+  </div>
+</div>

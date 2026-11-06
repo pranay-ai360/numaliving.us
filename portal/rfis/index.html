@@ -1,0 +1,74 @@
+---
+view: rfis
+---
+<div class="mb-8 flex flex-wrap items-end justify-between gap-4">
+  <div>
+    <p class="eyebrow">Requests for information</p>
+    <h1 class="display mt-2 text-2xl">RFIs</h1>
+  </div>
+  <template x-if="canAct">
+    <button type="button" @click="raising = !raising" class="min-h-11 bg-gold px-5 text-sm font-semibold text-white hover:bg-gold-dark" x-text="raising ? 'Cancel' : '+ Raise an RFI'"></button>
+  </template>
+</div>
+
+<template x-if="raising">
+  <form @submit.prevent="raise()" class="mb-5 flex flex-col gap-3 border border-gold bg-paper p-5">
+    <label class="text-sm font-semibold">
+      Question
+      <input x-model="newTitle" required class="mt-1.5 w-full border border-[#cfc7b8] px-3 py-2.5 font-normal outline-none focus:border-gold">
+    </label>
+    <label class="text-sm font-semibold">
+      Details (optional)
+      <textarea x-model="newText" rows="2" class="mt-1.5 w-full border border-[#cfc7b8] px-3 py-2.5 font-normal outline-none focus:border-gold"></textarea>
+    </label>
+    <button type="submit" class="min-h-11 self-start bg-ink px-5 text-sm font-semibold text-white">Send to Numa</button>
+  </form>
+</template>
+
+<div class="grid items-start gap-5 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)]">
+  <ul aria-label="RFI list" class="border border-line bg-paper">
+    <template x-for="rfi in list" :key="rfi.id">
+      <li>
+        <button type="button" :aria-pressed="rfi.id === selected.id" @click="selectedId = rfi.id" class="block w-full border-b border-[#efeae1] px-4 py-4 text-left" :class="rfi.id === selected.id ? 'bg-[#faf6ee] shadow-[inset_3px_0_0_var(--brand-gold)]' : 'bg-paper hover:bg-[#fcfaf6]'">
+          <span class="flex justify-between gap-3 text-xs">
+            <strong class="text-gold-dark" x-text="rfi.code"></strong>
+            <span :class="status(rfi).className" x-text="status(rfi).label"></span>
+          </span>
+          <span class="mt-1.5 block text-sm font-semibold" x-text="rfi.title"></span>
+          <span class="mt-1 block text-xs text-ink-muted" x-text="addressedTo(rfi)"></span>
+        </button>
+      </li>
+    </template>
+  </ul>
+
+  <section aria-label="Conversation" class="border border-line bg-paper">
+    <div class="border-b border-line px-5 py-4">
+      <p class="text-xs font-bold text-gold-dark" x-text="`${selected.code} · ${selected.area}`"></p>
+      <h2 class="mt-1 text-lg font-bold" x-text="selected.title"></h2>
+    </div>
+    <div class="flex flex-col gap-4 p-5">
+      <template x-for="(message, index) in selected.messages" :key="index">
+        <div class="px-4 py-3.5" :class="message.fromNuma ? 'mr-10 bg-linen' : 'ml-10 bg-gold-soft'">
+          <p class="text-xs"><strong x-text="message.who"></strong> <span class="text-ink-muted" x-text="`· ${message.when}`"></span></p>
+          <p class="mt-1.5 text-sm leading-relaxed" x-text="message.text"></p>
+          <template x-if="message.file">
+            <span class="mt-2 inline-block border border-line bg-paper px-2.5 py-1 text-xs font-semibold" x-text="`PDF · ${message.file}`"></span>
+          </template>
+        </div>
+      </template>
+    </div>
+    <template x-if="isMine && canAct">
+      <div class="flex flex-col gap-2.5 border-t border-line p-5">
+        <label for="reply" class="text-sm font-semibold">Your answer</label>
+        <textarea id="reply" rows="3" x-model="reply" placeholder="Type your answer, or attach a marked-up PDF." class="w-full border border-[#cfc7b8] px-3 py-2.5 text-sm outline-none focus:border-gold"></textarea>
+        <div class="flex flex-wrap gap-2.5">
+          <button type="button" @click="send()" class="min-h-11 bg-gold px-5 text-sm font-semibold text-white hover:bg-gold-dark">Send answer</button>
+          <span class="flex min-h-11 items-center border border-[#cfc7b8] px-5 text-sm font-semibold text-ink-muted">Attach PDF</span>
+        </div>
+      </div>
+    </template>
+    <template x-if="waitingOnSomeoneElse">
+      <p class="border-t border-line px-5 py-3 text-sm text-ink-muted" x-text="`Waiting for ${personName(selected.to)} to answer.`"></p>
+    </template>
+  </section>
+</div>

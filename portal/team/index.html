@@ -1,0 +1,65 @@
+---
+view: team
+---
+{%- assign portal = site.data.portal -%}
+<div class="mb-8 flex flex-wrap items-end justify-between gap-4">
+  <div>
+    <p class="eyebrow">Team &amp; access</p>
+    <h1 class="display mt-2 text-2xl">Responsibility Form</h1>
+  </div>
+  <template x-if="isMain">
+    <button type="button" @click="invite()" class="min-h-11 bg-gold px-5 text-sm font-semibold text-white hover:bg-gold-dark">+ Invite a person</button>
+  </template>
+</div>
+
+<p class="-mt-4 mb-5 max-w-3xl text-sm leading-relaxed text-ink-muted">The first step on every project: the client appoints a client admin. It can be the owner, architect, contractor or project manager. The client admin decides, for each person, what they can see, act on and approve. <span x-text="isMain ? 'You are the client admin: click any box to change it, then switch roles above to see the effect.' : `Only the client admin (${clientAdminName}) can change it.`"></span></p>
+<template x-if="notice">
+  <p role="status" class="mb-4 bg-gold-soft px-4 py-2.5 text-sm" x-text="notice"></p>
+</template>
+
+<div class="mb-4 flex flex-wrap gap-4 text-xs text-ink-muted">
+  {%- assign looks = "bg-[#ece8e1] text-ink-muted|bg-paper text-ink shadow-[inset_0_0_0_1px_#d9d3c8]|bg-gold-soft text-ink font-medium|bg-gold text-ink font-bold" | split: "|" -%}
+  {%- for name in portal.level_names %}
+  <span class="flex items-center gap-1.5"><span class="px-2 py-1 {{ looks[forloop.index0] }}">{{ name }}</span>{{ portal.level_help[forloop.index0] }}</span>
+  {%- endfor %}
+</div>
+
+<div class="overflow-x-auto border border-line bg-paper">
+  <table class="w-full min-w-[1000px] text-sm">
+    <thead>
+      <tr class="text-left text-[11px] uppercase tracking-[0.1em] text-ink-muted">
+        <th scope="col" class="border-b border-line px-5 py-3 font-semibold">Person</th>
+        {%- for module in portal.modules %}
+        <th scope="col" class="border-b border-line px-2 py-3 font-semibold">{{ module.label }}</th>
+        {%- endfor %}
+      </tr>
+    </thead>
+    <tbody>
+      {%- for person in portal.people %}
+      {%- assign person_index = forloop.index0 %}
+      <tr>
+        <th scope="row" class="border-b border-[#efeae1] px-5 py-3 text-left font-normal">
+          <span class="block font-semibold">{{ person.name }}<template x-if="$store.demo.state.clientAdmin === {{ person_index }}"><span class="ml-2 text-[10px] font-bold uppercase tracking-[0.12em] text-gold-dark">Client admin</span></template></span>
+          <span class="block text-xs text-ink-muted">{{ person.org }}</span>
+        </th>
+        {%- for module in portal.modules %}
+        <td class="border-b border-[#efeae1] p-1.5">
+          <button type="button" :disabled="!isMain" @click="cycle({{ person_index }}, {{ forloop.index0 }})" :aria-label="cellLabel({{ person_index }}, {{ forloop.index0 }})" :class="cellClass({{ person_index }}, {{ forloop.index0 }})" x-text="levelName({{ person_index }}, {{ forloop.index0 }})"></button>
+        </td>
+        {%- endfor %}
+      </tr>
+      {%- endfor %}
+    </tbody>
+  </table>
+</div>
+
+<template x-if="isMain">
+  <div class="mt-5 flex flex-wrap items-end justify-between gap-4">
+    <label class="text-sm font-semibold">Hand over client admin to<select @change="handOver($event)" class="ml-3 min-h-11 border border-[#cfc7b8] bg-paper px-3 font-normal outline-none focus:border-gold">
+        {%- for person in portal.people %}
+        <option value="{{ forloop.index0 }}" :selected="$store.demo.state.clientAdmin === {{ forloop.index0 }}">{{ person.name }}</option>
+        {%- endfor %}
+      </select></label>
+    <button type="button" @click="$store.demo.resetRights()" class="min-h-11 border border-gold px-5 text-sm font-semibold text-gold-dark hover:bg-gold hover:text-white">Reset form</button>
+  </div>
+</template>

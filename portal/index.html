@@ -1,0 +1,69 @@
+---
+---
+{%- assign portal = site.data.portal -%}
+{% include portal-title.html eyebrow="Overview" title=portal.project.name %}
+
+<section aria-label="Project stage" class="border border-line bg-paper p-6">
+  <div class="mb-4 flex flex-wrap justify-between gap-2 text-sm">
+    <h2 class="font-semibold">Project stage</h2>
+    <span class="text-ink-muted">Handover planned: {{ portal.project.handover }}</span>
+  </div>
+  <ol class="grid grid-cols-2 gap-x-2 gap-y-5 sm:grid-cols-4 lg:grid-cols-8">
+    {%- for stage in portal.stages %}
+    <li class="flex flex-col gap-2">
+      <div class="h-1.5 {% if stage.state == 'done' %}bg-gold{% elsif stage.state == 'next' %}bg-line{% endif %}"{% if stage.state == 'now' %} style="background:linear-gradient(90deg, var(--brand-gold) 60%, var(--brand-line) 60%)"{% endif %}></div>
+      <span class="text-xs font-semibold leading-snug">{{ stage.name }}</span>
+      <span class="text-[11px] text-ink-muted">{{ stage.note }}</span>
+    </li>
+    {%- endfor %}
+  </ol>
+</section>
+
+<div class="mt-4 grid grid-cols-2 gap-3 lg:grid-cols-4">
+  {%- for stat in portal.stats %}
+  <div class="border border-line bg-paper px-5 py-4">
+    <p class="display normal-case text-xl text-gold-dark">{{ stat.value }}</p>
+    <p class="mt-1.5 text-sm text-ink-muted">{{ stat.label }}</p>
+  </div>
+  {%- endfor %}
+</div>
+
+<div class="mt-6 grid items-start gap-5 lg:grid-cols-2">
+  <section aria-label="Waiting for you" class="border border-line bg-paper" x-data>
+    <div class="flex items-center justify-between border-b border-line px-5 py-4">
+      <h2 class="font-semibold">Waiting for you</h2>
+      <span class="bg-gold px-2 py-0.5 text-xs font-bold text-ink" x-text="$store.demo.tasks.length"></span>
+    </div>
+    <template x-if="$store.demo.tasks.length === 0">
+      <p class="px-5 py-6 text-sm text-ink-muted">Nothing waiting. You are all caught up.</p>
+    </template>
+    <template x-for="(task, index) in $store.demo.tasks" :key="task.id">
+      <a :href="$store.demo.url(task.href)" class="flex items-center gap-4 border-[#efeae1] px-5 py-4 transition-colors hover:bg-[#faf6ee]" :class="index === $store.demo.tasks.length - 1 && $store.demo.can('commercials', 1) ? '' : 'border-b'">
+        <span class="w-24 shrink-0 text-[10px] font-bold uppercase tracking-[0.16em] text-gold-dark" x-text="task.tag"></span>
+        <span class="min-w-0 flex-1">
+          <span class="block text-sm font-semibold" x-text="task.title"></span>
+          <span class="mt-0.5 block text-xs text-ink-muted" x-text="task.meta"></span>
+        </span>
+        <span class="shrink-0 border border-gold px-3 py-2 text-xs font-semibold text-gold-dark" x-text="task.cta"></span>
+      </a>
+    </template>
+    <template x-if="!$store.demo.can('commercials', 1)">
+      <p class="bg-[#faf8f4] px-5 py-3 text-xs text-ink-muted">Commercials are hidden for you. Your client admin sets this on Team &amp; access.</p>
+    </template>
+  </section>
+
+  <section aria-label="Latest from the factory" class="border border-line bg-paper">
+    <h2 class="border-b border-line px-5 py-4 font-semibold">Latest from the factory</h2>
+    {%- for update in portal.updates %}
+    <div class="flex gap-4 border-b border-[#efeae1] px-5 py-4 last:border-b-0">
+      {%- if update.photo %}
+      <div role="img" aria-label="Photo: {{ update.title | escape }}" class="h-16 w-24 shrink-0" style="background:repeating-linear-gradient(96deg, rgba(255,255,255,0.06) 0 2px, transparent 2px 9px), linear-gradient(160deg, #6b4a32, #4a3121)"></div>
+      {%- endif %}
+      <div>
+        <p class="text-sm font-semibold">{{ update.title }}</p>
+        <p class="mt-1 text-xs text-ink-muted">{{ update.meta }}</p>
+      </div>
+    </div>
+    {%- endfor %}
+  </section>
+</div>
