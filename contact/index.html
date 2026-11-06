@@ -1,0 +1,29 @@
+---
+layout: default
+scripts:
+  - quote-form.js
+---
+{% include page-hero.html eyebrow="Contact" title="Request a Quote" lead="Tell us about the project. Attach drawings as PDFs, or sketch the idea by hand below." %}
+<section class="py-20">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 grid gap-14 lg:grid-cols-[1.6fr_1fr]">
+    {% include quote-form.html %}
+    <aside class="h-fit space-y-8 bg-linen p-8">
+      <div>
+        <p class="eyebrow">Talk to us</p>
+        <ul class="mt-4 space-y-2">
+          <li><a href="mailto:{{ site.data.site.contact.email }}" class="hover:text-gold">{{ site.data.site.contact.email }}</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="eyebrow">What happens next</p>
+        <ol class="mt-4 list-decimal space-y-2 pl-5 text-ink-muted">
+          <li>We review your scope within two working days.</li>
+          <li>We will get in touch with you to understand your project better.</li>
+          <li>We provide you with a proposal.</li>
+          <li>Once agreed, your team gets access to the client portal.</li>
+          <li>Progress is updated in the portal until final delivery.</li>
+        </ol>
+      </div>
+    </aside>
+  </div>
+</section>
